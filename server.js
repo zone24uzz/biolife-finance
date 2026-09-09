@@ -16,7 +16,33 @@ const server = createServer(async (req, res) => {
     const db = await readDb();
     if (url.pathname === '/api/v1/dashboard') return send(res, 200, { meta: db.meta, summary: db.summary, cashflow: db.cashflow, productMix: db.productMix, productionLines: db.productionLines, operations: db.operations });
     const match = url.pathname.match(/^\/api\/v1\/modules\/([a-z]+)$/);
-    if (match && db.modules[match[1]]) return send(res, 200, { module: match[1], ...db.modules[match[1]] });
+    if (match && db.modules[match[1]]) {
+      const module = db.modules[match[1]];
+      const section = Math.max(0, Number(url.searchParams.get('section') || 0));
+      const rows = module.sectionRows?.[section] || module.rows || [];
+      const numeric = rows.map(row => Number(String(row[3] || '').replace(/[^0-9.-]/g, ''))).filter(Number.isFinite);
+      const statuses = rows.reduce((acc, row) => { acc[row[4] || 'Noma’lum'] = (acc[row[4] || 'Noma’lum'] || 0) + 1; return acc; }, {});
+      return send(res, 200, { module: match[1], ...module, activeSection: section, rows, analytics: { total: rows.length, numericTotal: numeric.reduce((a,b) => a+b, 0), average: numeric.length ? Math.round(numeric.reduce((a,b) => a+b, 0) / numeric.length) : 0, statuses } });
+    }
+    const recordMatch = url.pathname.match(/^\/api\/v1\/modules\/([a-z]+)\/records(?:\/([^/]+))?$/);
+    if (recordMatch && db.modules[recordMatch[1]]) {
+      const module = db.modules[recordMatch[1]];
+      const section = Math.max(0, Number(url.searchParams.get('section') || 0));
+      module.sectionRows ||= module.children.map(() => []);
+      module.sectionRows[section] ||= [];
+      if (req.method === 'POST') {
+        let raw = ''; for await (const chunk of req) raw += chunk; const input = JSON.parse(raw || '{}');
+        const row = Array.isArray(input.row) ? input.row : [input.code, input.name, input.meta, input.value, input.status || 'Qoralama'];
+        if (!row[0] || !row[1]) return send(res, 422, { code: 'VALIDATION_ERROR', message: 'Kod va nom majburiy.' });
+        module.sectionRows[section].unshift(row); await writeFile(dbPath, JSON.stringify(db, null, 2)); return send(res, 201, { row });
+      }
+      if (req.method === 'DELETE' && recordMatch[2]) {
+        const before = module.sectionRows[section].length;
+        module.sectionRows[section] = module.sectionRows[section].filter(row => String(row[0]) !== decodeURIComponent(recordMatch[2]));
+        if (module.sectionRows[section].length === before) return send(res, 404, { code: 'NOT_FOUND', message: 'Yozuv topilmadi.' });
+        await writeFile(dbPath, JSON.stringify(db, null, 2)); return send(res, 200, { deleted: true });
+      }
+    }
     if (req.method === 'POST' && url.pathname === '/api/v1/operations') {
       let raw = ''; for await (const chunk of req) raw += chunk; const input = JSON.parse(raw || '{}');
       if (!input.name || !input.amount) return send(res, 422, { code: 'VALIDATION_ERROR', message: 'Nomi va summa majburiy.' });
