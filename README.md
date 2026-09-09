@@ -24,7 +24,7 @@ API: `http://127.0.0.1:8787/api/v1/health`
 - Modul sahifalari: filter, qidiruv, eksport tugmasi, jadval, statuslar va pagination skeleti.
 - Responsive layout, keyboard focus uchun tabiiy form elementlari, reduced-motion rejimi.
 
-Dashboard va modul ma’lumotlari `db/data.json` dan `server.js` API orqali keladi. Yangi operatsiya modalidan saqlangan ma’lumot JSON DB’ga yoziladi va qayta yuklanganda ko‘rinadi. Keyingi iteratsiyada shu kontrakt PostgreSQL/Prisma modeli, Argon2id sessiya auth va real permission enforcement bilan almashtiriladi.
+Dashboard va modul ma’lumotlari `db/data.json` dan `server.js` API orqali keladi. Yangi operatsiya modalidan saqlangan ma’lumot markaziy ma’lumotlar bazasi’ga yoziladi va qayta yuklanganda ko‘rinadi. Keyingi iteratsiyada shu kontrakt PostgreSQL/Prisma modeli, Argon2id sessiya auth va real permission enforcement bilan almashtiriladi.
 
 ## TZ traceability
 
@@ -39,7 +39,8 @@ Dashboard va modul ma’lumotlari `db/data.json` dan `server.js` API orqali kela
 
 ## Muhim prinsiplar
 
-- Pul qiymatlari backendda `NUMERIC(18,2)` yoki minor-unit integer bilan saqlanadi; frontend demo formatlash uchun ishlaydi.
+- Pul qiymatlari backendda `NUMERIC(18,2)` yoki minor-unit integer bilan saqlanadi; frontend faqat ko‘rsatish qatlami sifatida ishlaydi.
 - AI moliyaviy yozuvni mustaqil post qilmaydi.
 - Posted moliyaviy yozuvlar o‘chirilmaydi; tuzatish storno orqali qilinadi.
 - Frontenddagi menyu yashirish backend permission tekshiruvining o‘rnini bosmaydi.
+
