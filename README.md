@@ -1,0 +1,42 @@
+# BIOLIFE Finance
+
+Biolife korxonasi uchun korporativ moliyaviy boshqaruv ilovasining UI-first MVP bazasi.
+
+## Ishga tushirish
+
+```powershell
+cd D:\Biolife-Finance
+npm install
+npm run dev -- --host 127.0.0.1 --port 4173
+```
+
+Brauzer: `http://127.0.0.1:4173/`
+
+## Hozirgi iteratsiya
+
+- Login ekrani: rol tanlash, parol ko‘rsatish/yashirish, loadingga tayyor oqim.
+- RBAC UI: CEO, buxgalter, ombor, ishlab chiqarish, sotuv, xarid va auditor menyulari.
+- Referens sidebar: Ishlab chiqarish, Ombor, Sotuv, Xarid, Kassa va bank, Moliya, Byudjet, AI Phase 2.
+- Dashboard: 6 KPI, daromad/xarajat grafigi, mahsulot mixi, operatsiyalar, ishlab chiqarish liniyalari.
+- Modul sahifalari: filter, qidiruv, eksport tugmasi, jadval, statuslar va pagination skeleti.
+- Responsive layout, keyboard focus uchun tabiiy form elementlari, reduced-motion rejimi.
+
+Ko‘rsatilayotgan raqamlar UI oqimini tekshirish uchun demo seed ma’lumotlaridir. Keyingi iteratsiyada `/api/v1` kontrakti, PostgreSQL/Prisma modeli, Argon2id sessiya auth va real permission enforcement ulanadi.
+
+## TZ traceability
+
+| TZ | Qamrov | Holat |
+|---|---|---|
+| AUTH-01, AUTH-14, AUTH-15 | Login va rolega mos menyu | UI MVP |
+| RP-01 | Dashboard KPI, chart, operatsiyalar | UI MVP |
+| UI-30/31 | Sidebar, filtrlar, dashboard referens | UI MVP |
+| UI-32–38 | Barcha modul route/sahifa skeletlari | UI scaffold |
+| API-01–10 | REST, decimal, permission scope | Keyingi bosqich |
+| DB-01–11 | PostgreSQL constraint va accounting invariantlar | Keyingi bosqich |
+
+## Muhim prinsiplar
+
+- Pul qiymatlari backendda `NUMERIC(18,2)` yoki minor-unit integer bilan saqlanadi; frontend demo formatlash uchun ishlaydi.
+- AI moliyaviy yozuvni mustaqil post qilmaydi.
+- Posted moliyaviy yozuvlar o‘chirilmaydi; tuzatish storno orqali qilinadi.
+- Frontenddagi menyu yashirish backend permission tekshiruvining o‘rnini bosmaydi.
