@@ -7,10 +7,13 @@ Biolife korxonasi uchun korporativ moliyaviy boshqaruv ilovasining UI-first MVP 
 ```powershell
 cd D:\Biolife-Finance
 npm install
+npm run api
 npm run dev -- --host 127.0.0.1 --port 4173
 ```
 
 Brauzer: `http://127.0.0.1:4173/`
+
+API: `http://127.0.0.1:8787/api/v1/health`
 
 ## Hozirgi iteratsiya
 
@@ -21,7 +24,7 @@ Brauzer: `http://127.0.0.1:4173/`
 - Modul sahifalari: filter, qidiruv, eksport tugmasi, jadval, statuslar va pagination skeleti.
 - Responsive layout, keyboard focus uchun tabiiy form elementlari, reduced-motion rejimi.
 
-Ko‘rsatilayotgan raqamlar UI oqimini tekshirish uchun demo seed ma’lumotlaridir. Keyingi iteratsiyada `/api/v1` kontrakti, PostgreSQL/Prisma modeli, Argon2id sessiya auth va real permission enforcement ulanadi.
+Dashboard va modul ma’lumotlari `db/data.json` dan `server.js` API orqali keladi. Yangi operatsiya modalidan saqlangan ma’lumot JSON DB’ga yoziladi va qayta yuklanganda ko‘rinadi. Keyingi iteratsiyada shu kontrakt PostgreSQL/Prisma modeli, Argon2id sessiya auth va real permission enforcement bilan almashtiriladi.
 
 ## TZ traceability
 

@@ -1,0 +1,429 @@
+{
+  "meta": {
+    "company": "Biolife Group",
+    "period": "01.08.2026 — 31.08.2026",
+    "currency": "UZS",
+    "updatedAt": "2026-09-09T16:45:00+05:00"
+  },
+  "summary": {
+    "productionVolume": {
+      "value": "84 260 L",
+      "change": "+12.8%"
+    },
+    "finishedGoods": {
+      "value": "12 480",
+      "change": "+8.4%"
+    },
+    "income": {
+      "value": "728.4M",
+      "change": "+18.2%"
+    },
+    "expense": {
+      "value": "391.7M",
+      "change": "+6.1%"
+    },
+    "netProfit": {
+      "value": "336.7M",
+      "change": "+26.4%"
+    },
+    "unitCost": {
+      "value": "4 652",
+      "change": "−3.7%"
+    }
+  },
+  "cashflow": [
+    {
+      "month": "01 Avg",
+      "income": 420,
+      "expense": 270
+    },
+    {
+      "month": "05 Avg",
+      "income": 510,
+      "expense": 310
+    },
+    {
+      "month": "10 Avg",
+      "income": 470,
+      "expense": 290
+    },
+    {
+      "month": "15 Avg",
+      "income": 610,
+      "expense": 360
+    },
+    {
+      "month": "20 Avg",
+      "income": 570,
+      "expense": 330
+    },
+    {
+      "month": "25 Avg",
+      "income": 720,
+      "expense": 390
+    },
+    {
+      "month": "31 Avg",
+      "income": 680,
+      "expense": 410
+    }
+  ],
+  "productMix": [
+    {
+      "name": "Suv 5L",
+      "value": 38,
+      "color": "#75d5af"
+    },
+    {
+      "name": "Suv 1.5L",
+      "value": 27,
+      "color": "#f1c77a"
+    },
+    {
+      "name": "Suv 0.5L",
+      "value": 21,
+      "color": "#92b6ff"
+    },
+    {
+      "name": "Boshqa",
+      "value": 14,
+      "color": "#b9a7eb"
+    }
+  ],
+  "productionLines": [
+    {
+      "name": "1-liniya — Tozalash",
+      "progress": 82
+    },
+    {
+      "name": "2-liniya — Butilkalash",
+      "progress": 68
+    },
+    {
+      "name": "3-liniya — Qadoqlash",
+      "progress": 79
+    }
+  ],
+  "operations": [
+    {
+      "date": "31.08.2026",
+      "code": "SO-1048",
+      "name": "Green Market LLC",
+      "type": "Sotuv",
+      "amount": "18 450 000",
+      "status": "Tasdiqlangan"
+    },
+    {
+      "date": "30.08.2026",
+      "code": "KI-0021",
+      "name": "Preforma PET kirimi",
+      "type": "Ombor",
+      "amount": "7 200 000",
+      "status": "Qabul qilindi"
+    },
+    {
+      "date": "29.08.2026",
+      "code": "PAY-882",
+      "name": "Aqua Plast ta’minotchi",
+      "type": "Bank",
+      "amount": "12 000 000",
+      "status": "Kutilmoqda"
+    },
+    {
+      "date": "28.08.2026",
+      "code": "EX-031",
+      "name": "Elektr energiyasi",
+      "type": "Xarajat",
+      "amount": "3 850 000",
+      "status": "Tasdiqlangan"
+    },
+    {
+      "date": "27.08.2026",
+      "code": "PR-119",
+      "name": "Suv ishlab chiqarish batch",
+      "type": "Ishlab chiqarish",
+      "amount": "—",
+      "status": "Jarayonda"
+    },
+    {
+      "date": "26.08.2026",
+      "code": "SO-1040",
+      "name": "Fresh Retail",
+      "type": "Sotuv",
+      "amount": "9 720 000",
+      "status": "To‘langan"
+    }
+  ],
+  "modules": {
+    "production": {
+      "children": [
+        "Ishlab chiqarish rejalari",
+        "Suv tozalash",
+        "Ishlab chiqarilgan mahsulot",
+        "BOM / Retseptura",
+        "Uskunalar",
+        "Ishlab chiqarish tannarxi"
+      ],
+      "rows": [
+        [
+          "PR-119",
+          "Suv ishlab chiqarish batch",
+          "31.08.2026",
+          "84 260 L",
+          "Jarayonda"
+        ],
+        [
+          "PR-118",
+          "Qadoqlash liniyasi",
+          "30.08.2026",
+          "12 480 dona",
+          "Yakunlangan"
+        ],
+        [
+          "PR-117",
+          "Suv tozalash batch",
+          "29.08.2026",
+          "90 000 L",
+          "Yakunlangan"
+        ]
+      ]
+    },
+    "warehouse": {
+      "children": [
+        "Xomashyo",
+        "Tayyor mahsulot",
+        "Qadoqlar",
+        "Filtr materiallari",
+        "Kirim / Chiqim",
+        "Inventarizatsiya"
+      ],
+      "rows": [
+        [
+          "SKU-0042",
+          "BIOLIFE Suv 5L",
+          "Tayyor mahsulot",
+          "12 480 dona",
+          "Mavjud"
+        ],
+        [
+          "SKU-0029",
+          "Preforma PET 5L",
+          "Xomashyo",
+          "8 200 dona",
+          "Mavjud"
+        ],
+        [
+          "SKU-0088",
+          "Qopqoq 28mm",
+          "Qadoqlar",
+          "48 600 dona",
+          "Kam qoldiq"
+        ],
+        [
+          "SKU-0011",
+          "Filtr membrana 400G",
+          "Filtr materiallari",
+          "24 dona",
+          "Mavjud"
+        ]
+      ]
+    },
+    "sales": {
+      "children": [
+        "Sotuvlar",
+        "Mijozlar",
+        "Dilerlar",
+        "Debitorlik"
+      ],
+      "rows": [
+        [
+          "SO-1048",
+          "Green Market LLC",
+          "BIOLIFE Suv 5L",
+          "18 450 000",
+          "Tasdiqlangan"
+        ],
+        [
+          "SO-1047",
+          "Mega Trade",
+          "BIOLIFE Suv 1.5L",
+          "9 280 000",
+          "To‘langan"
+        ],
+        [
+          "SO-1046",
+          "Fresh Retail",
+          "BIOLIFE Suv 0.5L",
+          "6 720 000",
+          "Qarz mavjud"
+        ],
+        [
+          "SO-1042",
+          "Baraka Market",
+          "BIOLIFE Suv 5L",
+          "14 100 000",
+          "Tasdiqlangan"
+        ]
+      ]
+    },
+    "purchases": {
+      "children": [
+        "Yetkazib beruvchilar",
+        "Xaridlar",
+        "Kreditorlik"
+      ],
+      "rows": [
+        [
+          "PO-0208",
+          "Aqua Plast LLC",
+          "Preforma PET 5L",
+          "42 000 000",
+          "Qabul qilindi"
+        ],
+        [
+          "PO-0207",
+          "CleanChem",
+          "Filtr reagentlari",
+          "8 420 000",
+          "Kutilmoqda"
+        ],
+        [
+          "PO-0206",
+          "Energo Tashkent",
+          "Elektr energiyasi",
+          "3 850 000",
+          "To‘lanmagan"
+        ]
+      ]
+    },
+    "cash": {
+      "children": [
+        "Kassa",
+        "Bank hisoblari",
+        "To‘lov topshiriqlari",
+        "Bank ko‘chirmalari",
+        "Reconciliation"
+      ],
+      "rows": [
+        [
+          "PAY-882",
+          "Aqua Plast LLC",
+          "Bank chiqimi",
+          "12 000 000",
+          "Kutilmoqda"
+        ],
+        [
+          "REC-441",
+          "Green Market LLC",
+          "Bank kirimi",
+          "18 450 000",
+          "Moslashtirildi"
+        ],
+        [
+          "CASH-019",
+          "Kassa 01",
+          "Naqd kirim",
+          "4 250 000",
+          "Tasdiqlangan"
+        ]
+      ]
+    },
+    "finance": {
+      "children": [
+        "Buxgalteriya",
+        "Bosh kitob",
+        "Jurnal",
+        "Hisoblar rejasi",
+        "P&L",
+        "Balans"
+      ],
+      "rows": [
+        [
+          "JE-8044",
+          "Sotuv #SO-1048",
+          "Daromad / Debitorlik",
+          "18 450 000",
+          "Posted"
+        ],
+        [
+          "JE-8043",
+          "Xarajat #EX-031",
+          "Elektr energiyasi",
+          "3 850 000",
+          "Posted"
+        ],
+        [
+          "JE-8042",
+          "Kirim #KI-0021",
+          "Xomashyo",
+          "7 200 000",
+          "Posted"
+        ]
+      ]
+    },
+    "budget": {
+      "children": [
+        "Byudjet rejalari",
+        "Reja / Fakt",
+        "Xarajat limitlari",
+        "To‘lov kalendari",
+        "Byudjet versiyalari"
+      ],
+      "rows": [
+        [
+          "BUD-2026-08",
+          "Ishlab chiqarish xarajatlari",
+          "Avgust 2026",
+          "245 000 000",
+          "Tasdiqlangan"
+        ],
+        [
+          "BUD-2026-08",
+          "Marketing va sotuv",
+          "Avgust 2026",
+          "58 000 000",
+          "Fakt 91%"
+        ],
+        [
+          "BUD-2026-09",
+          "Xomashyo xaridi",
+          "Sentyabr 2026",
+          "320 000 000",
+          "Qoralama"
+        ]
+      ]
+    },
+    "ai": {
+      "children": [
+        "Barcha tavsiyalar",
+        "Risklar",
+        "Foyda imkoniyatlari",
+        "Prognozlar",
+        "Anomaliyalar"
+      ],
+      "rows": [
+        [
+          "AI-031",
+          "Debitorlik oshishi",
+          "Debitorlik",
+          "Ish kunlari 14 dan oshgan qarzlar",
+          "87%"
+        ],
+        [
+          "AI-030",
+          "Marjani oshirish",
+          "Suv 1.5L",
+          "Narx segmentini qayta ko‘rib chiqish",
+          "76%"
+        ],
+        [
+          "AI-029",
+          "Cash-gap prognozi",
+          "To‘lov kalendari",
+          "18-sentyabrda qoldiq pasayishi kutilmoqda",
+          "81%"
+        ]
+      ]
+    }
+  }
+}
