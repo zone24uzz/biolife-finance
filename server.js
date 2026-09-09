@@ -45,6 +45,7 @@ const server = createServer(async (req, res) => {
         let raw = ''; for await (const chunk of req) raw += chunk; const input = JSON.parse(raw || '{}');
         const row = Array.isArray(input.row) ? input.row : [input.code, input.name, input.meta, input.value, input.status || 'Qoralama'];
         if (!row[0] || !row[1]) return send(res, 422, { code: 'VALIDATION_ERROR', message: 'Kod va nom majburiy.' });
+        if (module.sectionRows[section].some(existing => String(existing[0]) === String(row[0]))) return send(res, 409, { code: 'DUPLICATE_CODE', message: 'Bu kod shu bo‘limda allaqachon mavjud.' });
         module.sectionRows[section].unshift(row); await writeFile(dbPath, JSON.stringify(db, null, 2)); return send(res, 201, { row });
       }
       if (req.method === 'PUT' && recordMatch[2]) {
