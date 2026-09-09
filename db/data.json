@@ -186,6 +186,14 @@
           "90 000 L",
           "Yakunlangan"
         ]
+      ],
+      "sectionRows": [
+        [["PR-119", "Suv ishlab chiqarish batch", "31.08.2026", "84 260 L", "Jarayonda"], ["PR-118", "Qadoqlash liniyasi", "30.08.2026", "12 480 dona", "Yakunlangan"], ["PR-117", "Suv tozalash batch", "29.08.2026", "90 000 L", "Yakunlangan"]],
+        [["WT-044", "Filtratsiya / RO-01", "31.08.2026 08:20", "98 400 L → 84 260 L", "Yakunlangan"], ["WT-043", "Mineralizatsiya / RO-02", "30.08.2026 09:10", "92 100 L → 80 880 L", "Yakunlangan"], ["WT-042", "UV sterilizatsiya", "29.08.2026 07:50", "90 000 L", "Nazoratda"]],
+        [["FG-8841", "BIOLIFE Suv 5L", "31.08.2026", "8 240 dona", "Sifat tasdiqlandi"], ["FG-8840", "BIOLIFE Suv 1.5L", "31.08.2026", "4 240 dona", "Omborga topshirildi"], ["FG-8839", "BIOLIFE Suv 0.5L", "30.08.2026", "6 800 dona", "Omborga topshirildi"]],
+        [["BOM-5L-v3", "BIOLIFE Suv 5L", "01.08.2026", "12 komponent", "Tasdiqlangan"], ["BOM-1.5L-v2", "BIOLIFE Suv 1.5L", "01.08.2026", "9 komponent", "Tasdiqlangan"], ["BOM-0.5L-v2", "BIOLIFE Suv 0.5L", "01.08.2026", "8 komponent", "Qoralama"]],
+        [["EQ-001", "RO Filtratsiya liniyasi", "Sex A / 1-liniya", "98.4% uptime", "Faol"], ["EQ-002", "Butilkalash liniyasi", "Sex B / 2-liniya", "94.1% uptime", "Faol"], ["EQ-003", "Qadoqlash liniyasi", "Sex C / 3-liniya", "Servis: 14.09", "Servis kerak"]],
+        [["COST-08-5L", "BIOLIFE Suv 5L", "Avgust 2026", "4 652 UZS/L", "Tasdiqlangan"], ["COST-08-1.5L", "BIOLIFE Suv 1.5L", "Avgust 2026", "3 180 UZS/L", "Tasdiqlangan"], ["COST-08-0.5L", "BIOLIFE Suv 0.5L", "Avgust 2026", "2 410 UZS/L", "Qayta hisobda"]]
       ]
     },
     "warehouse": {
