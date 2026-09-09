@@ -3,6 +3,9 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import process from 'node:process';
+
+try { process.loadEnvFile(path.join(path.dirname(fileURLToPath(import.meta.url)), '.env')); } catch {}
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const dbPath = path.join(root, 'db', 'data.json');
@@ -17,6 +20,19 @@ const server = createServer(async (req, res) => {
     if (url.pathname === '/api/v1/dashboard') return send(res, 200, { meta: db.meta, summary: db.summary, cashflow: db.cashflow, productMix: db.productMix, productionLines: db.productionLines, operations: db.operations });
     if (req.method === 'POST' && url.pathname === '/api/v1/ai/chat') {
       let raw = ''; for await (const chunk of req) raw += chunk; const { prompt = '' } = JSON.parse(raw || '{}');
+      const geminiKey = process.env.GEMINI_API_KEY;
+      if (geminiKey) {
+        const model = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
+        const context = JSON.stringify({ summary: db.summary, cashflow: db.cashflow, operations: db.operations.slice(0, 12), productionLines: db.productionLines, modules: Object.fromEntries(Object.entries(db.modules).map(([name, value]) => [name, { children: value.children, sectionRows: value.sectionRows }])) });
+        const geminiPrompt = `Sen Biolife korporativ moliyaviy boshqaruv tizimining AI yordamchisisan. Faqat berilgan ma’lumotlarga asoslan. Raqamlarni o‘zgartirma, valyutani UZS deb ko‘rsat. Javobni o‘zbek tilida, qisqa va amaliy ber. Agar ma’lumot yetarli bo‘lmasa, buni ochiq ayt. Ma’lumotlar: ${context}\n\nFoydalanuvchi savoli: ${prompt}`;
+        try {
+          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': geminiKey }, body: JSON.stringify({ contents: [{ parts: [{ text: geminiPrompt }] }] },) });
+          const payload = await response.json();
+          const answer = payload?.candidates?.[0]?.content?.parts?.map(part => part.text || '').join('').trim();
+          if (response.ok && answer) return send(res, 200, { answer, source: `Gemini · ${model} · Biolife ma’lumotlar bazasi` });
+          console.error('Gemini response error:', payload?.error?.message || response.status);
+        } catch (error) { console.error('Gemini request failed:', error.message); }
+      }
       const q = prompt.toLowerCase(); const s = db.summary;
       let answer = `Avgust 2026 bo‘yicha daromad ${s.income.value}, xarajat ${s.expense.value} va sof foyda ${s.netProfit.value}. Sof marja taxminan 46.2% ni tashkil qiladi.`;
       if (q.includes('qarz') || q.includes('debitor')) answer = 'Debitorlik bo‘yicha asosiy e’tibor Fresh Retail hisobiga qaratilishi kerak: 6 720 000 UZS qoldiq va 14 kunlik muddat ko‘rsatilgan. Sotuv menejeriga eslatma va to‘lov rejasini yaratish tavsiya etiladi.';
