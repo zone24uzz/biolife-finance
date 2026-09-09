@@ -52,4 +52,5 @@ const server = createServer(async (req, res) => {
     return send(res, 404, { code: 'NOT_FOUND', message: 'Endpoint topilmadi.' });
   } catch (error) { return send(res, 500, { code: 'SERVER_ERROR', message: 'JSON DB o‘qilmadi.' }); }
 });
-server.listen(8787, '127.0.0.1', () => console.log('BIOLIFE API: http://127.0.0.1:8787'));
+const port = Number(process.env.BIOLIFE_PORT || 8787);
+server.listen(port, '127.0.0.1', () => console.log(`BIOLIFE API: http://127.0.0.1:${port}`));
