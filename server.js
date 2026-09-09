@@ -36,6 +36,13 @@ const server = createServer(async (req, res) => {
         if (!row[0] || !row[1]) return send(res, 422, { code: 'VALIDATION_ERROR', message: 'Kod va nom majburiy.' });
         module.sectionRows[section].unshift(row); await writeFile(dbPath, JSON.stringify(db, null, 2)); return send(res, 201, { row });
       }
+      if (req.method === 'PUT' && recordMatch[2]) {
+        let raw = ''; for await (const chunk of req) raw += chunk; const input = JSON.parse(raw || '{}');
+        const index = module.sectionRows[section].findIndex(row => String(row[0]) === decodeURIComponent(recordMatch[2]));
+        if (index < 0) return send(res, 404, { code: 'NOT_FOUND', message: 'Yozuv topilmadi.' });
+        const row = Array.isArray(input.row) ? input.row : module.sectionRows[section][index];
+        module.sectionRows[section][index] = row; await writeFile(dbPath, JSON.stringify(db, null, 2)); return send(res, 200, { row });
+      }
       if (req.method === 'DELETE' && recordMatch[2]) {
         const before = module.sectionRows[section].length;
         module.sectionRows[section] = module.sectionRows[section].filter(row => String(row[0]) !== decodeURIComponent(recordMatch[2]));
