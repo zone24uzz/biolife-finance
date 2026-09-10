@@ -1081,7 +1081,7 @@ function App() {
               onCreate={() => setModal(true)}
             />
           )}{" "}
-          {page === "ai" && dashboard && (
+          {page === "ai" && (
             <PageErrorBoundary key={`ai-${roleKey}`}>
               <AIAssistant dashboard={dashboard} roleKey={roleKey} />
             </PageErrorBoundary>
