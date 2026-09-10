@@ -875,6 +875,8 @@ function App() {
     [collapsed, setCollapsed] = useState(false),
     [dashboard, setDashboard] = useState(null),
     [module, setModule] = useState(null),
+    [moduleLoading, setModuleLoading] = useState(false),
+    [moduleError, setModuleError] = useState(""),
     [modal, setModal] = useState(false),
     [loading, setLoading] = useState(false),
     [error, setError] = useState("");
@@ -954,15 +956,35 @@ function App() {
     return () => clearInterval(timer);
   }, [account, roleKey]);
   useEffect(() => {
-    if (!account || page === "dashboard" || page === "ai" || page === "admin")
+    if (!account || page === "dashboard" || page === "ai" || page === "admin") {
+      setModuleLoading(false);
+      setModuleError("");
       return;
-    setLoading(true);
+    }
+    const controller = new AbortController();
+    setModuleLoading(true);
+    setModuleError("");
     setModule(null);
-    apiFetch(`/modules/${page}`)
-      .then((r) => r.json())
+    apiFetch(`/modules/${page}`, { signal: controller.signal })
+      .then(async (r) => {
+        const body = await r.json();
+        if (!r.ok)
+          throw new Error(body.message || "Modul ma’lumotlari olinmadi.");
+        if (!Array.isArray(body.children))
+          throw new Error("Modul ma’lumoti noto‘g‘ri formatda keldi.");
+        return body;
+      })
       .then(setModule)
-      .catch(() => setError("Modul ma’lumotlari olinmadi."))
-      .finally(() => setLoading(false));
+      .catch((requestError) => {
+        if (requestError.name !== "AbortError")
+          setModuleError(
+            requestError.message || "Modul ma’lumotlari olinmadi.",
+          );
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setModuleLoading(false);
+      });
+    return () => controller.abort();
   }, [account, page]);
   if (checking)
     return <div className="loading-state">Sessiya tekshirilmoqda…</div>;
@@ -1009,6 +1031,17 @@ function App() {
           {loading && !dashboard && (
             <div className="loading-state">Ma’lumotlar yuklanmoqda...</div>
           )}
+          {moduleLoading && (
+            <div className="loading-state">Bo‘lim yuklanmoqda...</div>
+          )}
+          {moduleError && !moduleLoading && (
+            <div className="api-error">
+              <span>{moduleError}</span>
+              <button onClick={() => window.location.reload()}>
+                Qayta urinish
+              </button>
+            </div>
+          )}
           {page === "dashboard" && dashboard && (
             <Dashboard
               data={dashboard}
@@ -1024,6 +1057,8 @@ function App() {
           {page !== "dashboard" &&
             page !== "ai" &&
             page !== "admin" &&
+            !moduleLoading &&
+            !moduleError &&
             module && (
               <ModulePage
                 key={page}

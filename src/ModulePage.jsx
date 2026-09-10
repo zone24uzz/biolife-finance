@@ -208,7 +208,12 @@ export default function ModulePage({ type, data: initialData, onCreate }) {
     [selected, setSelected] = useState(null),
     [editor, setEditor] = useState(null),
     [version, setVersion] = useState(0);
-  const selectedRows = data.sectionRows?.[active] || data.rows;
+  const children = Array.isArray(data?.children) ? data.children : [];
+  const selectedRows = Array.isArray(data?.sectionRows?.[active])
+    ? data.sectionRows[active]
+    : Array.isArray(data?.rows)
+      ? data.rows
+      : [];
   const rows = useMemo(
     () =>
       selectedRows.filter((r) =>
@@ -253,27 +258,30 @@ export default function ModulePage({ type, data: initialData, onCreate }) {
     const body = await r.json();
     if (!r.ok) throw new Error(body.message || "Yangilash xatosi.");
     setData(body);
-    if(clearQuery)setQuery("");
+    if (clearQuery) setQuery("");
     setVersion((v) => v + 1);
   };
-  useEffect(()=>{const timer=setInterval(()=>refresh(false).catch(()=>{}),5000);return()=>clearInterval(timer);},[type,active]);
+  useEffect(() => {
+    const timer = setInterval(() => refresh(false).catch(() => {}), 5000);
+    return () => clearInterval(timer);
+  }, [type, active]);
   return (
     <>
       <div className="page-heading">
         <div>
           <span className="eyebrow">DEPARTAMENT / {type.toUpperCase()}</span>
           <h1>{titleMap[type]}</h1>
-          <p>{data.children[active]} bo‘yicha operatsion ma’lumotlar.</p>
+          <p>{children[active] || "Bo‘lim"} bo‘yicha operatsion ma’lumotlar.</p>
         </div>
         <button
           className="primary"
           onClick={() => setEditor({ initial: null })}
         >
-          <Plus size={18} /> Yangi: {data.children[active]}
+          <Plus size={18} /> Yangi: {children[active] || "yozuv"}
         </button>
       </div>
       <div className="module-tabs">
-        {data.children.map((x, i) => (
+        {children.map((x, i) => (
           <button
             className={i === active ? "tab-active" : ""}
             onClick={() => {
@@ -289,7 +297,7 @@ export default function ModulePage({ type, data: initialData, onCreate }) {
       <div className="section-analytics">
         <div className="analytics-label">
           <BarChart3 size={17} />
-          <span>{data.children[active]} analitikasi</span>
+          <span>{children[active] || "Bo‘lim"} analitikasi</span>
         </div>
         <div>
           <strong>{analytics.total || rows.length}</strong>
@@ -311,7 +319,7 @@ export default function ModulePage({ type, data: initialData, onCreate }) {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder={`${data.children[active]} ichidan qidirish...`}
+              placeholder={`${children[active] || "Bo‘lim"} ichidan qidirish...`}
             />
           </div>
           <button className="filter-btn" onClick={() => setQuery("")}>
@@ -397,7 +405,7 @@ export default function ModulePage({ type, data: initialData, onCreate }) {
           section={active}
           onClose={() => setSelected(null)}
           onDeleted={refresh}
-          sectionName={data.children[active]}
+          sectionName={children[active]}
           onEdit={(row) => {
             setSelected(null);
             setEditor({ initial: row });
@@ -407,7 +415,7 @@ export default function ModulePage({ type, data: initialData, onCreate }) {
       {editor && (
         <Editor
           type={type}
-          sectionName={data.children[active]}
+          sectionName={children[active]}
           initial={editor.initial}
           section={active}
           onClose={() => setEditor(null)}
