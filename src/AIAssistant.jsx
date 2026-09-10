@@ -115,11 +115,14 @@ export default function AIAssistant({ dashboard, roleKey }) {
       })
       .catch((error) => setCatalogError(error.message));
   }, [roleKey]);
-  useEffect(() => () => abortRef.current?.abort(), []);
-  useEffect(
-    () => endRef.current?.scrollIntoView({ block: "nearest" }),
-    [messages, sending],
-  );
+  useEffect(() => {
+    return () => {
+      abortRef.current?.abort();
+    };
+  }, []);
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ block: "nearest" });
+  }, [messages, sending]);
   const send = async (value) => {
     const text = (value ?? prompt).trim();
     if (!text || sending || !agent) return;
