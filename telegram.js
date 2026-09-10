@@ -125,17 +125,33 @@ const dashboardText = (db, user) =>
     : `📊 ${user.name}\nRuxsat etilgan bo‘limlar: ${user.allowed.filter((x) => db.modules[x]).length}`;
 
 const withTyping = async (chatId, task) => {
-  const showTyping = () =>
-    tgCall("sendChatAction", { chat_id: chatId, action: "typing" }).catch(
-      () => {},
-    );
-  await showTyping();
-  const timer = setInterval(showTyping, 4000);
-  timer.unref?.();
+  const frames = ["Печатает ...", "Печатает ..", "Печатает ."];
+  const sent = await tgCall("sendMessage", {
+    chat_id: chatId,
+    text: frames[0],
+  }).catch(() => null);
+  const messageId = sent?.ok ? sent.result?.message_id : null;
+  let frame = 0;
+  const timer = messageId
+    ? setInterval(() => {
+        frame = (frame + 1) % frames.length;
+        tgCall("editMessageText", {
+          chat_id: chatId,
+          message_id: messageId,
+          text: frames[frame],
+        }).catch(() => {});
+      }, 1000)
+    : null;
+  timer?.unref?.();
   try {
     return await task();
   } finally {
-    clearInterval(timer);
+    if (timer) clearInterval(timer);
+    if (messageId)
+      await tgCall("deleteMessage", {
+        chat_id: chatId,
+        message_id: messageId,
+      }).catch(() => {});
   }
 };
 
