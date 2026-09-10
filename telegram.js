@@ -124,6 +124,14 @@ const dashboardText = (db, user) =>
     ? `📊 BIOLIFE\nDaromad: ${db.summary?.income?.value || "—"}\nXarajat: ${db.summary?.expense?.value || "—"}\nSof foyda: ${db.summary?.netProfit?.value || "—"}`
     : `📊 ${user.name}\nRuxsat etilgan bo‘limlar: ${user.allowed.filter((x) => db.modules[x]).length}`;
 
+export const formatTelegramText = (value) =>
+  String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
+    .replace(/`([^`\n]+)`/g, "<code>$1</code>");
+
 const withTyping = async (chatId, task) => {
   const frames = ["Печатает ...", "Печатает ..", "Печатает ."];
   const sent = await tgCall("sendMessage", {
@@ -258,7 +266,10 @@ export async function handleTelegramUpdate(db, update, askAi, performAction) {
     );
     const reply = {
       chat_id: chatId,
-      text: result.answer || result.message || "Javob olinmadi.",
+      text: formatTelegramText(
+        result.answer || result.message || "Javob olinmadi.",
+      ),
+      parse_mode: "HTML",
     };
     if (result.proposal)
       reply.reply_markup = {
