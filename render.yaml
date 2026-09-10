@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: biolife-finance
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: BIOLIFE_HOST
+        value: 0.0.0.0
+      - key: TELEGRAM_MODE
+        value: webhook
+      - key: DATABASE_URL
+        fromDatabase:
+          name: biolife-finance-db
+          property: connectionString
+      - key: BIOLIFE_BOOTSTRAP_PASSWORD
+        generateValue: true
+      - key: TELEGRAM_WEBHOOK_SECRET
+        generateValue: true
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+
+databases:
+  - name: biolife-finance-db
+    plan: free
+    databaseName: biolife_finance
+    user: biolife_finance

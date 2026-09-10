@@ -15,6 +15,12 @@ Brauzer: `http://127.0.0.1:4173/`
 
 API: `http://127.0.0.1:8787/api/v1/health`
 
+Standart lokal loginlar rol kodlari bilan ochiladi; parol `.env` dagi `BIOLIFE_BOOTSTRAP_PASSWORD` qiymati. Qiymat berilmasa faqat lokal demo uchun `biolife-demo` ishlatiladi.
+
+Telegram AI-agent, Mini App, PostgreSQL va VPS sozlamalari: [`docs/TELEGRAM_AGENT.md`](docs/TELEGRAM_AGENT.md).
+
+Render deploy qo‘llanmasi: [`docs/RENDER_DEPLOY.md`](docs/RENDER_DEPLOY.md). `render.yaml` frontend, API, PostgreSQL va Telegram webhook konfiguratsiyasini tayyorlaydi.
+
 ## Hozirgi iteratsiya
 
 - Login ekrani: rol tanlash, parol ko‘rsatish/yashirish, loadingga tayyor oqim.

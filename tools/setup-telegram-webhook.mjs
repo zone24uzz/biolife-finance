@@ -1,0 +1,11 @@
+import process from 'node:process';
+import { loadLocalEnv } from '../env.js';
+import { configureTelegramBot } from '../telegram.js';
+loadLocalEnv();
+const token=process.env.TELEGRAM_BOT_TOKEN,base=(process.env.PUBLIC_BASE_URL||'').replace(/\/$/,'');
+if(!token||!base)throw new Error('TELEGRAM_BOT_TOKEN va PUBLIC_BASE_URL majburiy.');
+const webhook=`${base}/api/v1/telegram/webhook`;
+const response=await fetch(`https://api.telegram.org/bot${token}/setWebhook`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:webhook,secret_token:process.env.TELEGRAM_WEBHOOK_SECRET||undefined,allowed_updates:['message','callback_query'],drop_pending_updates:false})});
+const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.description||'Webhook ulanmagan.');
+await configureTelegramBot();
+console.log(`Telegram webhook ulandi: ${webhook}`);

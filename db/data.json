@@ -170,45 +170,59 @@
           "Suv ishlab chiqarish batch",
           "31.08.2026",
           "84 260 L",
-          "Jarayonda"
+          "Jarayonda",
+          "Suv ishlab chiqarish batch bo‘yicha operatsion yozuv."
         ],
         [
           "PR-118",
           "Qadoqlash liniyasi",
           "30.08.2026",
           "12 480 dona",
-          "Yakunlangan"
+          "Yakunlangan",
+          "Qadoqlash liniyasi bo‘yicha operatsion yozuv."
         ],
         [
           "PR-117",
           "Suv tozalash batch",
           "29.08.2026",
           "90 000 L",
-          "Yakunlangan"
+          "Yakunlangan",
+          "Suv tozalash batch bo‘yicha operatsion yozuv."
         ]
       ],
       "sectionRows": [
         [
           [
+            "awdwa",
+            "awda",
+            "21124",
+            "awdaw",
+            "Qoralamawadaw",
+            "awdaw"
+          ],
+          [
             "PR-119",
             "Suv ishlab chiqarish batch",
             "31.08.2026",
             "84 260 L",
-            "Jarayonda"
+            "Jarayonda",
+            "Suv ishlab chiqarish batch — Ishlab chiqarish rejalari bo‘limidagi 31.08.2026 yozuv. Qiymat: 84 260 L, holat: Jarayonda."
           ],
           [
             "PR-118",
             "Qadoqlash liniyasi",
             "30.08.2026",
             "12 480 dona",
-            "Yakunlangan"
+            "Yakunlangan",
+            "Qadoqlash liniyasi — Ishlab chiqarish rejalari bo‘limidagi 30.08.2026 yozuv. Qiymat: 12 480 dona, holat: Yakunlangan."
           ],
           [
             "PR-117",
             "Suv tozalash batch",
             "29.08.2026",
             "90 000 L",
-            "Yakunlangan"
+            "Yakunlangan",
+            "Suv tozalash batch — Ishlab chiqarish rejalari bo‘limidagi 29.08.2026 yozuv. Qiymat: 90 000 L, holat: Yakunlangan."
           ]
         ],
         [
@@ -217,21 +231,24 @@
             "Filtratsiya / RO-01",
             "31.08.2026 08:20",
             "98 400 L → 84 260 L",
-            "Yakunlangan"
+            "Yakunlangan",
+            "Filtratsiya / RO-01 — Suv tozalash bo‘limidagi 31.08.2026 08:20 yozuv. Qiymat: 98 400 L → 84 260 L, holat: Yakunlangan."
           ],
           [
             "WT-043",
             "Mineralizatsiya / RO-02",
             "30.08.2026 09:10",
             "92 100 L → 80 880 L",
-            "Yakunlangan"
+            "Yakunlangan",
+            "Mineralizatsiya / RO-02 — Suv tozalash bo‘limidagi 30.08.2026 09:10 yozuv. Qiymat: 92 100 L → 80 880 L, holat: Yakunlangan."
           ],
           [
             "WT-042",
             "UV sterilizatsiya",
             "29.08.2026 07:50",
             "90 000 L",
-            "Nazoratda"
+            "Nazoratda",
+            "UV sterilizatsiya — Suv tozalash bo‘limidagi 29.08.2026 07:50 yozuv. Qiymat: 90 000 L, holat: Nazoratda."
           ]
         ],
         [
@@ -240,21 +257,24 @@
             "BIOLIFE Suv 5L",
             "31.08.2026",
             "8 240 dona",
-            "Sifat tasdiqlandi"
+            "Sifat tasdiqlandi",
+            "BIOLIFE Suv 5L — Ishlab chiqarilgan mahsulot bo‘limidagi 31.08.2026 yozuv. Qiymat: 8 240 dona, holat: Sifat tasdiqlandi."
           ],
           [
             "FG-8840",
             "BIOLIFE Suv 1.5L",
             "31.08.2026",
             "4 240 dona",
-            "Omborga topshirildi"
+            "Omborga topshirildi",
+            "BIOLIFE Suv 1.5L — Ishlab chiqarilgan mahsulot bo‘limidagi 31.08.2026 yozuv. Qiymat: 4 240 dona, holat: Omborga topshirildi."
           ],
           [
             "FG-8839",
             "BIOLIFE Suv 0.5L",
             "30.08.2026",
             "6 800 dona",
-            "Omborga topshirildi"
+            "Omborga topshirildi",
+            "BIOLIFE Suv 0.5L — Ishlab chiqarilgan mahsulot bo‘limidagi 30.08.2026 yozuv. Qiymat: 6 800 dona, holat: Omborga topshirildi."
           ]
         ],
         [
@@ -263,21 +283,24 @@
             "BIOLIFE Suv 5L",
             "01.08.2026",
             "12 komponent",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "BIOLIFE Suv 5L — BOM / Retseptura bo‘limidagi 01.08.2026 yozuv. Qiymat: 12 komponent, holat: Tasdiqlangan."
           ],
           [
             "BOM-1.5L-v2",
             "BIOLIFE Suv 1.5L",
             "01.08.2026",
             "9 komponent",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "BIOLIFE Suv 1.5L — BOM / Retseptura bo‘limidagi 01.08.2026 yozuv. Qiymat: 9 komponent, holat: Tasdiqlangan."
           ],
           [
             "BOM-0.5L-v2",
             "BIOLIFE Suv 0.5L",
             "01.08.2026",
             "8 komponent",
-            "Qoralama"
+            "Qoralama",
+            "BIOLIFE Suv 0.5L — BOM / Retseptura bo‘limidagi 01.08.2026 yozuv. Qiymat: 8 komponent, holat: Qoralama."
           ]
         ],
         [
@@ -286,21 +309,24 @@
             "RO Filtratsiya liniyasi",
             "Sex A / 1-liniya",
             "98.4% uptime",
-            "Faol"
+            "Faol",
+            "RO Filtratsiya liniyasi — Uskunalar bo‘limidagi Sex A / 1-liniya yozuv. Qiymat: 98.4% uptime, holat: Faol."
           ],
           [
             "EQ-002",
             "Butilkalash liniyasi",
             "Sex B / 2-liniya",
             "94.1% uptime",
-            "Faol"
+            "Faol",
+            "Butilkalash liniyasi — Uskunalar bo‘limidagi Sex B / 2-liniya yozuv. Qiymat: 94.1% uptime, holat: Faol."
           ],
           [
             "EQ-003",
             "Qadoqlash liniyasi",
             "Sex C / 3-liniya",
             "Servis: 14.09",
-            "Servis kerak"
+            "Servis kerak",
+            "Qadoqlash liniyasi — Uskunalar bo‘limidagi Sex C / 3-liniya yozuv. Qiymat: Servis: 14.09, holat: Servis kerak."
           ]
         ],
         [
@@ -309,21 +335,24 @@
             "BIOLIFE Suv 5L",
             "Avgust 2026",
             "4 652 UZS/L",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "BIOLIFE Suv 5L — Ishlab chiqarish tannarxi bo‘limidagi Avgust 2026 yozuv. Qiymat: 4 652 UZS/L, holat: Tasdiqlangan."
           ],
           [
             "COST-08-1.5L",
             "BIOLIFE Suv 1.5L",
             "Avgust 2026",
             "3 180 UZS/L",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "BIOLIFE Suv 1.5L — Ishlab chiqarish tannarxi bo‘limidagi Avgust 2026 yozuv. Qiymat: 3 180 UZS/L, holat: Tasdiqlangan."
           ],
           [
             "COST-08-0.5L",
             "BIOLIFE Suv 0.5L",
             "Avgust 2026",
             "2 410 UZS/L",
-            "Qayta hisobda"
+            "Qayta hisobda",
+            "BIOLIFE Suv 0.5L — Ishlab chiqarish tannarxi bo‘limidagi Avgust 2026 yozuv. Qiymat: 2 410 UZS/L, holat: Qayta hisobda."
           ]
         ]
       ]
@@ -343,28 +372,32 @@
           "BIOLIFE Suv 5L",
           "Tayyor mahsulot",
           "12 480 dona",
-          "Mavjud"
+          "Mavjud",
+          "BIOLIFE Suv 5L bo‘yicha operatsion yozuv."
         ],
         [
           "SKU-0029",
           "Preforma PET 5L",
           "Xomashyo",
           "8 200 dona",
-          "Mavjud"
+          "Mavjud",
+          "Preforma PET 5L bo‘yicha operatsion yozuv."
         ],
         [
           "SKU-0088",
           "Qopqoq 28mm",
           "Qadoqlar",
           "48 600 dona",
-          "Kam qoldiq"
+          "Kam qoldiq",
+          "Qopqoq 28mm bo‘yicha operatsion yozuv."
         ],
         [
           "SKU-0011",
           "Filtr membrana 400G",
           "Filtr materiallari",
           "24 dona",
-          "Mavjud"
+          "Mavjud",
+          "Filtr membrana 400G bo‘yicha operatsion yozuv."
         ]
       ],
       "sectionRows": [
@@ -374,14 +407,16 @@
             "Preforma PET 5L",
             "Ombor A",
             "8 200 dona",
-            "Mavjud"
+            "Mavjud",
+            "Preforma PET 5L — Xomashyo bo‘limidagi Ombor A yozuv. Qiymat: 8 200 dona, holat: Mavjud."
           ],
           [
             "RM-043",
             "Mineral reagent",
             "Ombor A",
             "1 240 kg",
-            "Mavjud"
+            "Mavjud",
+            "Mineral reagent — Xomashyo bo‘limidagi Ombor A yozuv. Qiymat: 1 240 kg, holat: Mavjud."
           ]
         ],
         [
@@ -390,14 +425,16 @@
             "BIOLIFE Suv 5L",
             "Batch FG-8841",
             "8 240 dona",
-            "Mavjud"
+            "Mavjud",
+            "BIOLIFE Suv 5L — Tayyor mahsulot bo‘limidagi Batch FG-8841 yozuv. Qiymat: 8 240 dona, holat: Mavjud."
           ],
           [
             "FG-8840",
             "BIOLIFE Suv 1.5L",
             "Batch FG-8840",
             "4 240 dona",
-            "Rezervda"
+            "Rezervda",
+            "BIOLIFE Suv 1.5L — Tayyor mahsulot bo‘limidagi Batch FG-8840 yozuv. Qiymat: 4 240 dona, holat: Rezervda."
           ]
         ],
         [
@@ -406,14 +443,16 @@
             "Butilka 5L",
             "Qadoq / PET",
             "24 600 dona",
-            "Mavjud"
+            "Mavjud",
+            "Butilka 5L — Qadoqlar bo‘limidagi Qadoq / PET yozuv. Qiymat: 24 600 dona, holat: Mavjud."
           ],
           [
             "PK-089",
             "Qopqoq 28mm",
             "Qadoq / PP",
             "48 600 dona",
-            "Kam qoldiq"
+            "Kam qoldiq",
+            "Qopqoq 28mm — Qadoqlar bo‘limidagi Qadoq / PP yozuv. Qiymat: 48 600 dona, holat: Kam qoldiq."
           ]
         ],
         [
@@ -422,14 +461,16 @@
             "Filtr membrana 400G",
             "RO-01",
             "24 dona",
-            "Mavjud"
+            "Mavjud",
+            "Filtr membrana 400G — Filtr materiallari bo‘limidagi RO-01 yozuv. Qiymat: 24 dona, holat: Mavjud."
           ],
           [
             "FM-012",
             "UV lampa",
             "UV-02",
             "6 dona",
-            "Servis kerak"
+            "Servis kerak",
+            "UV lampa — Filtr materiallari bo‘limidagi UV-02 yozuv. Qiymat: 6 dona, holat: Servis kerak."
           ]
         ],
         [
@@ -438,14 +479,16 @@
             "Preforma PET kirimi",
             "31.08.2026",
             "+8 200 dona",
-            "Qabul qilindi"
+            "Qabul qilindi",
+            "Preforma PET kirimi — Kirim / Chiqim bo‘limidagi 31.08.2026 yozuv. Qiymat: +8 200 dona, holat: Qabul qilindi."
           ],
           [
             "CH-0198",
             "Ishlab chiqarishga berish",
             "31.08.2026",
             "-6 400 dona",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "Ishlab chiqarishga berish — Kirim / Chiqim bo‘limidagi 31.08.2026 yozuv. Qiymat: -6 400 dona, holat: Tasdiqlangan."
           ]
         ],
         [
@@ -454,14 +497,16 @@
             "Ombor A inventarizatsiyasi",
             "31.08.2026",
             "-240 000 UZS",
-            "Yopilgan"
+            "Yopilgan",
+            "Ombor A inventarizatsiyasi — Inventarizatsiya bo‘limidagi 31.08.2026 yozuv. Qiymat: -240 000 UZS, holat: Yopilgan."
           ],
           [
             "INV-007",
             "Tayyor mahsulot sanog‘i",
             "30.08.2026",
             "+12 dona",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "Tayyor mahsulot sanog‘i — Inventarizatsiya bo‘limidagi 30.08.2026 yozuv. Qiymat: +12 dona, holat: Tasdiqlangan."
           ]
         ]
       ]
@@ -479,28 +524,32 @@
           "Green Market LLC",
           "BIOLIFE Suv 5L",
           "18 450 000",
-          "Tasdiqlangan"
+          "Tasdiqlangan",
+          "Green Market LLC bo‘yicha operatsion yozuv."
         ],
         [
           "SO-1047",
           "Mega Trade",
           "BIOLIFE Suv 1.5L",
           "9 280 000",
-          "To‘langan"
+          "To‘langan",
+          "Mega Trade bo‘yicha operatsion yozuv."
         ],
         [
           "SO-1046",
           "Fresh Retail",
           "BIOLIFE Suv 0.5L",
           "6 720 000",
-          "Qarz mavjud"
+          "Qarz mavjud",
+          "Fresh Retail bo‘yicha operatsion yozuv."
         ],
         [
           "SO-1042",
           "Baraka Market",
           "BIOLIFE Suv 5L",
           "14 100 000",
-          "Tasdiqlangan"
+          "Tasdiqlangan",
+          "Baraka Market bo‘yicha operatsion yozuv."
         ]
       ],
       "sectionRows": [
@@ -510,14 +559,16 @@
             "Green Market LLC",
             "31.08.2026",
             "18 450 000",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "Green Market LLC — Sotuvlar bo‘limidagi 31.08.2026 yozuv. Qiymat: 18 450 000, holat: Tasdiqlangan."
           ],
           [
             "SO-1047",
             "Mega Trade",
             "30.08.2026",
             "9 280 000",
-            "To‘langan"
+            "To‘langan",
+            "Mega Trade — Sotuvlar bo‘limidagi 30.08.2026 yozuv. Qiymat: 9 280 000, holat: To‘langan."
           ]
         ],
         [
@@ -526,14 +577,16 @@
             "Green Market LLC",
             "STIR 309884211",
             "18 450 000 qarz",
-            "Faol"
+            "Faol",
+            "Green Market LLC — Mijozlar bo‘limidagi STIR 309884211 yozuv. Qiymat: 18 450 000 qarz, holat: Faol."
           ],
           [
             "CUS-002",
             "Mega Trade",
             "STIR 307112908",
             "0 UZS qarz",
-            "Faol"
+            "Faol",
+            "Mega Trade — Mijozlar bo‘limidagi STIR 307112908 yozuv. Qiymat: 0 UZS qarz, holat: Faol."
           ]
         ],
         [
@@ -542,14 +595,16 @@
             "Mega Trade dileri",
             "Toshkent shahri",
             "Maxsus narx",
-            "Faol"
+            "Faol",
+            "Mega Trade dileri — Dilerlar bo‘limidagi Toshkent shahri yozuv. Qiymat: Maxsus narx, holat: Faol."
           ],
           [
             "DLR-009",
             "Baraka Market dileri",
             "Samarqand",
             "Limit 80M",
-            "Faol"
+            "Faol",
+            "Baraka Market dileri — Dilerlar bo‘limidagi Samarqand yozuv. Qiymat: Limit 80M, holat: Faol."
           ]
         ],
         [
@@ -558,14 +613,16 @@
             "Fresh Retail",
             "Muddati: 14 kun",
             "6 720 000",
-            "Qarz mavjud"
+            "Qarz mavjud",
+            "Fresh Retail — Debitorlik bo‘limidagi Muddati: 14 kun yozuv. Qiymat: 6 720 000, holat: Qarz mavjud."
           ],
           [
             "AR-1039",
             "Baraka Market",
             "Muddati: 7 kun",
             "4 100 000",
-            "Kechikkan"
+            "Kechikkan",
+            "Baraka Market — Debitorlik bo‘limidagi Muddati: 7 kun yozuv. Qiymat: 4 100 000, holat: Kechikkan."
           ]
         ]
       ]
@@ -582,21 +639,24 @@
           "Aqua Plast LLC",
           "Preforma PET 5L",
           "42 000 000",
-          "Qabul qilindi"
+          "Qabul qilindi",
+          "Aqua Plast LLC bo‘yicha operatsion yozuv."
         ],
         [
           "PO-0207",
           "CleanChem",
           "Filtr reagentlari",
           "8 420 000",
-          "Kutilmoqda"
+          "Kutilmoqda",
+          "CleanChem bo‘yicha operatsion yozuv."
         ],
         [
           "PO-0206",
           "Energo Tashkent",
           "Elektr energiyasi",
           "3 850 000",
-          "To‘lanmagan"
+          "To‘lanmagan",
+          "Energo Tashkent bo‘yicha operatsion yozuv."
         ]
       ],
       "sectionRows": [
@@ -606,14 +666,16 @@
             "Aqua Plast LLC",
             "STIR 305771204",
             "42 000 000 qarz",
-            "Faol"
+            "Faol",
+            "Aqua Plast LLC — Yetkazib beruvchilar bo‘limidagi STIR 305771204 yozuv. Qiymat: 42 000 000 qarz, holat: Faol."
           ],
           [
             "SUP-002",
             "CleanChem",
             "STIR 309112040",
             "8 420 000 qarz",
-            "Faol"
+            "Faol",
+            "CleanChem — Yetkazib beruvchilar bo‘limidagi STIR 309112040 yozuv. Qiymat: 8 420 000 qarz, holat: Faol."
           ]
         ],
         [
@@ -622,14 +684,16 @@
             "Aqua Plast LLC",
             "Preforma PET 5L",
             "42 000 000",
-            "Qabul qilindi"
+            "Qabul qilindi",
+            "Aqua Plast LLC — Xaridlar bo‘limidagi Preforma PET 5L yozuv. Qiymat: 42 000 000, holat: Qabul qilindi."
           ],
           [
             "PO-0207",
             "CleanChem",
             "Filtr reagentlari",
             "8 420 000",
-            "Kutilmoqda"
+            "Kutilmoqda",
+            "CleanChem — Xaridlar bo‘limidagi Filtr reagentlari yozuv. Qiymat: 8 420 000, holat: Kutilmoqda."
           ]
         ],
         [
@@ -638,14 +702,16 @@
             "Aqua Plast LLC",
             "Muddati: 15.09.2026",
             "42 000 000",
-            "To‘lanmagan"
+            "To‘lanmagan",
+            "Aqua Plast LLC — Kreditorlik bo‘limidagi Muddati: 15.09.2026 yozuv. Qiymat: 42 000 000, holat: To‘lanmagan."
           ],
           [
             "AP-0207",
             "CleanChem",
             "Muddati: 12.09.2026",
             "8 420 000",
-            "To‘lanmagan"
+            "To‘lanmagan",
+            "CleanChem — Kreditorlik bo‘limidagi Muddati: 12.09.2026 yozuv. Qiymat: 8 420 000, holat: To‘lanmagan."
           ]
         ]
       ]
@@ -664,21 +730,24 @@
           "Aqua Plast LLC",
           "Bank chiqimi",
           "12 000 000",
-          "Kutilmoqda"
+          "Kutilmoqda",
+          "Aqua Plast LLC bo‘yicha operatsion yozuv."
         ],
         [
           "REC-441",
           "Green Market LLC",
           "Bank kirimi",
           "18 450 000",
-          "Moslashtirildi"
+          "Moslashtirildi",
+          "Green Market LLC bo‘yicha operatsion yozuv."
         ],
         [
           "CASH-019",
           "Kassa 01",
           "Naqd kirim",
           "4 250 000",
-          "Tasdiqlangan"
+          "Tasdiqlangan",
+          "Kassa 01 bo‘yicha operatsion yozuv."
         ]
       ],
       "sectionRows": [
@@ -688,14 +757,16 @@
             "Kassa 01",
             "Boshlang‘ich: 12 400 000",
             "4 250 000",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "Kassa 01 — Kassa bo‘limidagi Boshlang‘ich: 12 400 000 yozuv. Qiymat: 4 250 000, holat: Tasdiqlangan."
           ],
           [
             "CASH-018",
             "Kassa 01",
             "Chiqim",
             "-1 180 000",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "Kassa 01 — Kassa bo‘limidagi Chiqim yozuv. Qiymat: -1 180 000, holat: Tasdiqlangan."
           ]
         ],
         [
@@ -704,14 +775,16 @@
             "Ipak Yo‘li Bank",
             "UZS · 202080001",
             "284 600 000",
-            "Faol"
+            "Faol",
+            "Ipak Yo‘li Bank — Bank hisoblari bo‘limidagi UZS · 202080001 yozuv. Qiymat: 284 600 000, holat: Faol."
           ],
           [
             "BANK-002",
             "Kapitalbank",
             "UZS · 202080009",
             "112 400 000",
-            "Faol"
+            "Faol",
+            "Kapitalbank — Bank hisoblari bo‘limidagi UZS · 202080009 yozuv. Qiymat: 112 400 000, holat: Faol."
           ]
         ],
         [
@@ -720,14 +793,16 @@
             "Aqua Plast LLC",
             "31.08.2026",
             "12 000 000",
-            "Kutilmoqda"
+            "Kutilmoqda",
+            "Aqua Plast LLC — To‘lov topshiriqlari bo‘limidagi 31.08.2026 yozuv. Qiymat: 12 000 000, holat: Kutilmoqda."
           ],
           [
             "PAY-881",
             "Energo Tashkent",
             "28.08.2026",
             "3 850 000",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "Energo Tashkent — To‘lov topshiriqlari bo‘limidagi 28.08.2026 yozuv. Qiymat: 3 850 000, holat: Tasdiqlangan."
           ]
         ],
         [
@@ -736,14 +811,16 @@
             "Ipak Yo‘li Bank",
             "31.08.2026",
             "128 ta satr",
-            "Import qilindi"
+            "Import qilindi",
+            "Ipak Yo‘li Bank — Bank ko‘chirmalari bo‘limidagi 31.08.2026 yozuv. Qiymat: 128 ta satr, holat: Import qilindi."
           ],
           [
             "ST-0830",
             "Kapitalbank",
             "30.08.2026",
             "94 ta satr",
-            "Import qilindi"
+            "Import qilindi",
+            "Kapitalbank — Bank ko‘chirmalari bo‘limidagi 30.08.2026 yozuv. Qiymat: 94 ta satr, holat: Import qilindi."
           ]
         ],
         [
@@ -752,14 +829,16 @@
             "Green Market → Bank kirimi",
             "18 450 000",
             "Farq: 0",
-            "Moslashtirildi"
+            "Moslashtirildi",
+            "Green Market → Bank kirimi — Reconciliation bo‘limidagi 18 450 000 yozuv. Qiymat: Farq: 0, holat: Moslashtirildi."
           ],
           [
             "REC-440",
             "Aqua Plast → Bank chiqimi",
             "12 000 000",
             "Farq: 0",
-            "Moslashtirildi"
+            "Moslashtirildi",
+            "Aqua Plast → Bank chiqimi — Reconciliation bo‘limidagi 12 000 000 yozuv. Qiymat: Farq: 0, holat: Moslashtirildi."
           ]
         ]
       ]
@@ -779,21 +858,24 @@
           "Sotuv #SO-1048",
           "Daromad / Debitorlik",
           "18 450 000",
-          "Posted"
+          "Posted",
+          "Sotuv #SO-1048 bo‘yicha operatsion yozuv."
         ],
         [
           "JE-8043",
           "Xarajat #EX-031",
           "Elektr energiyasi",
           "3 850 000",
-          "Posted"
+          "Posted",
+          "Xarajat #EX-031 bo‘yicha operatsion yozuv."
         ],
         [
           "JE-8042",
           "Kirim #KI-0021",
           "Xomashyo",
           "7 200 000",
-          "Posted"
+          "Posted",
+          "Kirim #KI-0021 bo‘yicha operatsion yozuv."
         ]
       ],
       "sectionRows": [
@@ -803,14 +885,16 @@
             "Buxgalteriya overview",
             "Ochiq davr",
             "6 ta hujjat",
-            "Nazoratda"
+            "Nazoratda",
+            "Buxgalteriya overview — Buxgalteriya bo‘limidagi Ochiq davr yozuv. Qiymat: 6 ta hujjat, holat: Nazoratda."
           ],
           [
             "ACC-02",
             "Posted hujjatlar",
             "Avgust 2026",
             "128 ta yozuv",
-            "Muvozanatli"
+            "Muvozanatli",
+            "Posted hujjatlar — Buxgalteriya bo‘limidagi Avgust 2026 yozuv. Qiymat: 128 ta yozuv, holat: Muvozanatli."
           ]
         ],
         [
@@ -819,14 +903,16 @@
             "Hisob 1010 · Kassa",
             "Avgust 2026",
             "16 650 000",
-            "Muvozanatli"
+            "Muvozanatli",
+            "Hisob 1010 · Kassa — Bosh kitob bo‘limidagi Avgust 2026 yozuv. Qiymat: 16 650 000, holat: Muvozanatli."
           ],
           [
             "GL-5110",
             "Hisob 5110 · Daromad",
             "Avgust 2026",
             "728 400 000",
-            "Muvozanatli"
+            "Muvozanatli",
+            "Hisob 5110 · Daromad — Bosh kitob bo‘limidagi Avgust 2026 yozuv. Qiymat: 728 400 000, holat: Muvozanatli."
           ]
         ],
         [
@@ -835,14 +921,16 @@
             "Sotuv #SO-1048",
             "Daromad / Debitorlik",
             "18 450 000",
-            "Posted"
+            "Posted",
+            "Sotuv #SO-1048 — Jurnal bo‘limidagi Daromad / Debitorlik yozuv. Qiymat: 18 450 000, holat: Posted."
           ],
           [
             "JE-8043",
             "Xarajat #EX-031",
             "Elektr energiyasi",
             "3 850 000",
-            "Posted"
+            "Posted",
+            "Xarajat #EX-031 — Jurnal bo‘limidagi Elektr energiyasi yozuv. Qiymat: 3 850 000, holat: Posted."
           ]
         ],
         [
@@ -851,14 +939,16 @@
             "Kassa",
             "Aktiv",
             "UZS",
-            "Faol"
+            "Faol",
+            "Kassa — Hisoblar rejasi bo‘limidagi Aktiv yozuv. Qiymat: UZS, holat: Faol."
           ],
           [
             "5110",
             "Sotuv daromadi",
             "Daromad",
             "UZS",
-            "Faol"
+            "Faol",
+            "Sotuv daromadi — Hisoblar rejasi bo‘limidagi Daromad yozuv. Qiymat: UZS, holat: Faol."
           ]
         ],
         [
@@ -867,14 +957,16 @@
             "P&L · Avgust 2026",
             "Daromad − Xarajat",
             "336 700 000",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "P&L · Avgust 2026 — P&L bo‘limidagi Daromad − Xarajat yozuv. Qiymat: 336 700 000, holat: Tasdiqlangan."
           ],
           [
             "PL-07",
             "P&L · Iyul 2026",
             "Daromad − Xarajat",
             "286 100 000",
-            "Yopilgan"
+            "Yopilgan",
+            "P&L · Iyul 2026 — P&L bo‘limidagi Daromad − Xarajat yozuv. Qiymat: 286 100 000, holat: Yopilgan."
           ]
         ],
         [
@@ -883,14 +975,16 @@
             "Balans · Avgust 2026",
             "Aktivlar",
             "1 284 600 000",
-            "Muvozanatli"
+            "Muvozanatli",
+            "Balans · Avgust 2026 — Balans bo‘limidagi Aktivlar yozuv. Qiymat: 1 284 600 000, holat: Muvozanatli."
           ],
           [
             "BS-07",
             "Balans · Iyul 2026",
             "Aktivlar",
             "1 190 400 000",
-            "Muvozanatli"
+            "Muvozanatli",
+            "Balans · Iyul 2026 — Balans bo‘limidagi Aktivlar yozuv. Qiymat: 1 190 400 000, holat: Muvozanatli."
           ]
         ]
       ]
@@ -909,21 +1003,24 @@
           "Ishlab chiqarish xarajatlari",
           "Avgust 2026",
           "245 000 000",
-          "Tasdiqlangan"
+          "Tasdiqlangan",
+          "Ishlab chiqarish xarajatlari bo‘yicha operatsion yozuv."
         ],
         [
           "BUD-2026-08",
           "Marketing va sotuv",
           "Avgust 2026",
           "58 000 000",
-          "Fakt 91%"
+          "Fakt 91%",
+          "Marketing va sotuv bo‘yicha operatsion yozuv."
         ],
         [
           "BUD-2026-09",
           "Xomashyo xaridi",
           "Sentyabr 2026",
           "320 000 000",
-          "Qoralama"
+          "Qoralama",
+          "Xomashyo xaridi bo‘yicha operatsion yozuv."
         ]
       ],
       "sectionRows": [
@@ -933,14 +1030,16 @@
             "Ishlab chiqarish xarajatlari",
             "Avgust 2026",
             "245 000 000",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "Ishlab chiqarish xarajatlari — Byudjet rejalari bo‘limidagi Avgust 2026 yozuv. Qiymat: 245 000 000, holat: Tasdiqlangan."
           ],
           [
             "BUD-2026-08",
             "Marketing va sotuv",
             "Avgust 2026",
             "58 000 000",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "Marketing va sotuv — Byudjet rejalari bo‘limidagi Avgust 2026 yozuv. Qiymat: 58 000 000, holat: Tasdiqlangan."
           ]
         ],
         [
@@ -949,14 +1048,16 @@
             "Ishlab chiqarish",
             "Reja / Fakt",
             "245M / 232M",
-            "94.7%"
+            "94.7%",
+            "Ishlab chiqarish — Reja / Fakt bo‘limidagi Reja / Fakt yozuv. Qiymat: 245M / 232M, holat: 94.7%."
           ],
           [
             "PF-002",
             "Marketing",
             "Reja / Fakt",
             "58M / 52.8M",
-            "91.0%"
+            "91.0%",
+            "Marketing — Reja / Fakt bo‘limidagi Reja / Fakt yozuv. Qiymat: 58M / 52.8M, holat: 91.0%."
           ]
         ],
         [
@@ -965,14 +1066,16 @@
             "Xomashyo xaridi",
             "Avgust 2026",
             "320 000 000",
-            "68% ishlatilgan"
+            "68% ishlatilgan",
+            "Xomashyo xaridi — Xarajat limitlari bo‘limidagi Avgust 2026 yozuv. Qiymat: 320 000 000, holat: 68% ishlatilgan."
           ],
           [
             "LIM-002",
             "Transport",
             "Avgust 2026",
             "42 000 000",
-            "91% ishlatilgan"
+            "91% ishlatilgan",
+            "Transport — Xarajat limitlari bo‘limidagi Avgust 2026 yozuv. Qiymat: 42 000 000, holat: 91% ishlatilgan."
           ]
         ],
         [
@@ -981,14 +1084,16 @@
             "Kutilayotgan kirim",
             "01–30.09.2026",
             "184 000 000",
-            "Rejada"
+            "Rejada",
+            "Kutilayotgan kirim — To‘lov kalendari bo‘limidagi 01–30.09.2026 yozuv. Qiymat: 184 000 000, holat: Rejada."
           ],
           [
             "CAL-0832",
             "Kutilayotgan chiqim",
             "01–30.09.2026",
             "226 000 000",
-            "Cash-gap"
+            "Cash-gap",
+            "Kutilayotgan chiqim — To‘lov kalendari bo‘limidagi 01–30.09.2026 yozuv. Qiymat: 226 000 000, holat: Cash-gap."
           ]
         ],
         [
@@ -997,14 +1102,16 @@
             "Asosiy byudjet",
             "Avgust 2026",
             "528 000 000",
-            "Tasdiqlangan"
+            "Tasdiqlangan",
+            "Asosiy byudjet — Byudjet versiyalari bo‘limidagi Avgust 2026 yozuv. Qiymat: 528 000 000, holat: Tasdiqlangan."
           ],
           [
             "VER-2026-09-1",
             "Reforecast",
             "Sentyabr 2026",
             "612 000 000",
-            "Qoralama"
+            "Qoralama",
+            "Reforecast — Byudjet versiyalari bo‘limidagi Sentyabr 2026 yozuv. Qiymat: 612 000 000, holat: Qoralama."
           ]
         ]
       ]
@@ -1023,21 +1130,24 @@
           "Debitorlik oshishi",
           "Debitorlik",
           "Ish kunlari 14 dan oshgan qarzlar",
-          "87%"
+          "87%",
+          "Debitorlik oshishi bo‘yicha operatsion yozuv."
         ],
         [
           "AI-030",
           "Marjani oshirish",
           "Suv 1.5L",
           "Narx segmentini qayta ko‘rib chiqish",
-          "76%"
+          "76%",
+          "Marjani oshirish bo‘yicha operatsion yozuv."
         ],
         [
           "AI-029",
           "Cash-gap prognozi",
           "To‘lov kalendari",
           "18-sentyabrda qoldiq pasayishi kutilmoqda",
-          "81%"
+          "81%",
+          "Cash-gap prognozi bo‘yicha operatsion yozuv."
         ]
       ],
       "sectionRows": [
@@ -1047,14 +1157,16 @@
             "Debitorlik oshishi",
             "Debitorlik",
             "14 kundan oshgan qarzlar",
-            "87%"
+            "87%",
+            "Debitorlik oshishi — Barcha tavsiyalar bo‘limidagi Debitorlik yozuv. Qiymat: 14 kundan oshgan qarzlar, holat: 87%."
           ],
           [
             "AI-030",
             "Marjani oshirish",
             "Suv 1.5L",
             "Narx segmentini qayta ko‘rib chiqish",
-            "76%"
+            "76%",
+            "Marjani oshirish — Barcha tavsiyalar bo‘limidagi Suv 1.5L yozuv. Qiymat: Narx segmentini qayta ko‘rib chiqish, holat: 76%."
           ]
         ],
         [
@@ -1063,14 +1175,16 @@
             "Kechikkan debitorlik",
             "Fresh Retail",
             "6 720 000 UZS / 14 kun",
-            "Yuqori"
+            "Yuqori",
+            "Kechikkan debitorlik — Risklar bo‘limidagi Fresh Retail yozuv. Qiymat: 6 720 000 UZS / 14 kun, holat: Yuqori."
           ],
           [
             "RISK-013",
             "Cash-gap xavfi",
             "To‘lov kalendari",
             "18-sentyabr",
-            "O‘rta"
+            "O‘rta",
+            "Cash-gap xavfi — Risklar bo‘limidagi To‘lov kalendari yozuv. Qiymat: 18-sentyabr, holat: O‘rta."
           ]
         ],
         [
@@ -1079,14 +1193,16 @@
             "Suv 1.5L marjasi",
             "Narx tahlili",
             "+4.2% potensial",
-            "76%"
+            "76%",
+            "Suv 1.5L marjasi — Foyda imkoniyatlari bo‘limidagi Narx tahlili yozuv. Qiymat: +4.2% potensial, holat: 76%."
           ],
           [
             "OPP-007",
             "Qadoq xarajati",
             "Tannarx",
             "−2.1% tejash",
-            "71%"
+            "71%",
+            "Qadoq xarajati — Foyda imkoniyatlari bo‘limidagi Tannarx yozuv. Qiymat: −2.1% tejash, holat: 71%."
           ]
         ],
         [
@@ -1095,14 +1211,16 @@
             "Sentyabr cashflow",
             "30 kunlik prognoz",
             "Kutilayotgan qoldiq 172M",
-            "81%"
+            "81%",
+            "Sentyabr cashflow — Prognozlar bo‘limidagi 30 kunlik prognoz yozuv. Qiymat: Kutilayotgan qoldiq 172M, holat: 81%."
           ],
           [
             "FC-2026-10",
             "Oktabr daromad",
             "60 kunlik prognoz",
             "O‘sish 14.8%",
-            "68%"
+            "68%",
+            "Oktabr daromad — Prognozlar bo‘limidagi 60 kunlik prognoz yozuv. Qiymat: O‘sish 14.8%, holat: 68%."
           ]
         ],
         [
@@ -1111,17 +1229,880 @@
             "Energiya xarajati",
             "28.08.2026",
             "O‘rtachadan +18%",
-            "Tekshirish kerak"
+            "Tekshirish kerak",
+            "Energiya xarajati — Anomaliyalar bo‘limidagi 28.08.2026 yozuv. Qiymat: O‘rtachadan +18%, holat: Tekshirish kerak."
           ],
           [
             "AN-043",
             "Suv 5L sotuv hajmi",
             "31.08.2026",
             "Rejadan +12%",
-            "Tasdiqlandi"
+            "Tasdiqlandi",
+            "Suv 5L sotuv hajmi — Anomaliyalar bo‘limidagi 31.08.2026 yozuv. Qiymat: Rejadan +12%, holat: Tasdiqlandi."
           ]
         ]
       ]
+    }
+  },
+  "audit": [
+    {
+      "at": "2026-09-09T13:45:30.577Z",
+      "action": "create",
+      "module": "production",
+      "section": 0,
+      "code": "wadaw"
+    },
+    {
+      "at": "2026-09-09T13:45:42.856Z",
+      "action": "delete",
+      "module": "production",
+      "section": 0,
+      "code": "wadaw"
+    },
+    {
+      "at": "2026-09-09T14:08:17.228Z",
+      "action": "ai-create",
+      "module": "sales",
+      "section": 0,
+      "code": "AI-PROBE-002"
+    },
+    {
+      "at": "2026-09-09T14:08:17.280Z",
+      "action": "delete",
+      "module": "sales",
+      "section": 0,
+      "code": "AI-PROBE-002"
+    },
+    {
+      "at": "2026-09-09T15:06:33.084Z",
+      "action": "create",
+      "module": "production",
+      "section": 0,
+      "code": "awdwa"
+    }
+  ],
+  "trash": [
+    {
+      "module": "production",
+      "section": 0,
+      "row": [
+        "wadaw",
+        "awd",
+        "awd",
+        "awd",
+        "Qoralamadwa"
+      ],
+      "at": "2026-09-09T13:45:42.856Z"
+    },
+    {
+      "module": "sales",
+      "section": 0,
+      "row": [
+        "AI-PROBE-002",
+        "Probe",
+        "09.09.2026",
+        "1",
+        "Qoralama",
+        "CRUD integratsiya testi"
+      ],
+      "at": "2026-09-09T14:08:17.280Z"
+    }
+  ],
+  "aiAgents": {
+    "accounts": {
+      "ceo": {
+        "id": "account-ceo",
+        "kind": "account",
+        "role": "ceo",
+        "name": "CEO strategik agenti",
+        "description": "Barcha bo‘limlar bo‘yicha qaror uchun xulosa beradi.",
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          }
+        ]
+      },
+      "accountant": {
+        "id": "account-accountant",
+        "kind": "account",
+        "role": "accountant",
+        "name": "Buxgalter agenti",
+        "description": "Hisob, hujjat va moliyaviy yozuvlarni tekshiradi.",
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          }
+        ]
+      },
+      "warehouse_manager": {
+        "id": "account-warehouse_manager",
+        "kind": "account",
+        "role": "warehouse_manager",
+        "name": "Ombor mudiri agenti",
+        "description": "Qoldiq, kirim-chiqim va inventar nazoratini tahlil qiladi.",
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          }
+        ]
+      },
+      "production_manager": {
+        "id": "account-production_manager",
+        "kind": "account",
+        "role": "production_manager",
+        "name": "Ishlab chiqarish rahbari agenti",
+        "description": "Reja, batch, uskuna va tannarxni tahlil qiladi.",
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          }
+        ]
+      },
+      "sales_manager": {
+        "id": "account-sales_manager",
+        "kind": "account",
+        "role": "sales_manager",
+        "name": "Sotuv rahbari agenti",
+        "description": "Mijoz, buyurtma, tushum va debitorlarni tahlil qiladi.",
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          }
+        ]
+      },
+      "purchase_manager": {
+        "id": "account-purchase_manager",
+        "kind": "account",
+        "role": "purchase_manager",
+        "name": "Xarid rahbari agenti",
+        "description": "Ta’minotchi, buyurtma va kreditorlarni tahlil qiladi.",
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          }
+        ]
+      },
+      "auditor": {
+        "id": "account-auditor",
+        "kind": "account",
+        "role": "auditor",
+        "name": "Auditor agenti",
+        "description": "Nazorat izi, nomuvofiqlik va risklarni tahlil qiladi.",
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          }
+        ]
+      }
+    },
+    "departments": {
+      "production": {
+        "id": "department-production",
+        "kind": "department",
+        "module": "production",
+        "name": "Ishlab chiqarish №1 agenti",
+        "rank": 1,
+        "description": "Ishlab chiqarish bo‘limidagi yozuvlar va ko‘rsatkichlarga ixtisoslashgan yetakchi agent.",
+        "trainedOn": [
+          "Bo‘lim yozuvlari",
+          "Status qoidalari",
+          "KPI va analitika",
+          "CRUD ish oqimi"
+        ],
+        "capabilities": [
+          "read",
+          "analyze",
+          "plan",
+          "draft-create",
+          "draft-update",
+          "request-delete"
+        ],
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          },
+          {
+            "id": "records",
+            "name": "Yozuvlar mutaxassisi",
+            "task": "Yozuv tafsilotlari, statusi va tavsifini tahlil qiladi.",
+            "keywords": [
+              "yozuv",
+              "status",
+              "tavsif",
+              "description",
+              "kod"
+            ]
+          }
+        ]
+      },
+      "warehouse": {
+        "id": "department-warehouse",
+        "kind": "department",
+        "module": "warehouse",
+        "name": "Ombor №1 agenti",
+        "rank": 1,
+        "description": "Ombor bo‘limidagi yozuvlar va ko‘rsatkichlarga ixtisoslashgan yetakchi agent.",
+        "trainedOn": [
+          "Bo‘lim yozuvlari",
+          "Status qoidalari",
+          "KPI va analitika",
+          "CRUD ish oqimi"
+        ],
+        "capabilities": [
+          "read",
+          "analyze",
+          "plan",
+          "draft-create",
+          "draft-update",
+          "request-delete"
+        ],
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          },
+          {
+            "id": "records",
+            "name": "Yozuvlar mutaxassisi",
+            "task": "Yozuv tafsilotlari, statusi va tavsifini tahlil qiladi.",
+            "keywords": [
+              "yozuv",
+              "status",
+              "tavsif",
+              "description",
+              "kod"
+            ]
+          }
+        ]
+      },
+      "sales": {
+        "id": "department-sales",
+        "kind": "department",
+        "module": "sales",
+        "name": "Sotuv №1 agenti",
+        "rank": 1,
+        "description": "Sotuv bo‘limidagi yozuvlar va ko‘rsatkichlarga ixtisoslashgan yetakchi agent.",
+        "trainedOn": [
+          "Bo‘lim yozuvlari",
+          "Status qoidalari",
+          "KPI va analitika",
+          "CRUD ish oqimi"
+        ],
+        "capabilities": [
+          "read",
+          "analyze",
+          "plan",
+          "draft-create",
+          "draft-update",
+          "request-delete"
+        ],
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          },
+          {
+            "id": "records",
+            "name": "Yozuvlar mutaxassisi",
+            "task": "Yozuv tafsilotlari, statusi va tavsifini tahlil qiladi.",
+            "keywords": [
+              "yozuv",
+              "status",
+              "tavsif",
+              "description",
+              "kod"
+            ]
+          }
+        ]
+      },
+      "purchases": {
+        "id": "department-purchases",
+        "kind": "department",
+        "module": "purchases",
+        "name": "Xarid №1 agenti",
+        "rank": 1,
+        "description": "Xarid bo‘limidagi yozuvlar va ko‘rsatkichlarga ixtisoslashgan yetakchi agent.",
+        "trainedOn": [
+          "Bo‘lim yozuvlari",
+          "Status qoidalari",
+          "KPI va analitika",
+          "CRUD ish oqimi"
+        ],
+        "capabilities": [
+          "read",
+          "analyze",
+          "plan",
+          "draft-create",
+          "draft-update",
+          "request-delete"
+        ],
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          },
+          {
+            "id": "records",
+            "name": "Yozuvlar mutaxassisi",
+            "task": "Yozuv tafsilotlari, statusi va tavsifini tahlil qiladi.",
+            "keywords": [
+              "yozuv",
+              "status",
+              "tavsif",
+              "description",
+              "kod"
+            ]
+          }
+        ]
+      },
+      "cash": {
+        "id": "department-cash",
+        "kind": "department",
+        "module": "cash",
+        "name": "Kassa va bank №1 agenti",
+        "rank": 1,
+        "description": "Kassa va bank bo‘limidagi yozuvlar va ko‘rsatkichlarga ixtisoslashgan yetakchi agent.",
+        "trainedOn": [
+          "Bo‘lim yozuvlari",
+          "Status qoidalari",
+          "KPI va analitika",
+          "CRUD ish oqimi"
+        ],
+        "capabilities": [
+          "read",
+          "analyze",
+          "plan",
+          "draft-create",
+          "draft-update",
+          "request-delete"
+        ],
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          },
+          {
+            "id": "records",
+            "name": "Yozuvlar mutaxassisi",
+            "task": "Yozuv tafsilotlari, statusi va tavsifini tahlil qiladi.",
+            "keywords": [
+              "yozuv",
+              "status",
+              "tavsif",
+              "description",
+              "kod"
+            ]
+          }
+        ]
+      },
+      "finance": {
+        "id": "department-finance",
+        "kind": "department",
+        "module": "finance",
+        "name": "Moliya №1 agenti",
+        "rank": 1,
+        "description": "Moliya bo‘limidagi yozuvlar va ko‘rsatkichlarga ixtisoslashgan yetakchi agent.",
+        "trainedOn": [
+          "Bo‘lim yozuvlari",
+          "Status qoidalari",
+          "KPI va analitika",
+          "CRUD ish oqimi"
+        ],
+        "capabilities": [
+          "read",
+          "analyze",
+          "plan",
+          "draft-create",
+          "draft-update",
+          "request-delete"
+        ],
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          },
+          {
+            "id": "records",
+            "name": "Yozuvlar mutaxassisi",
+            "task": "Yozuv tafsilotlari, statusi va tavsifini tahlil qiladi.",
+            "keywords": [
+              "yozuv",
+              "status",
+              "tavsif",
+              "description",
+              "kod"
+            ]
+          }
+        ]
+      },
+      "budget": {
+        "id": "department-budget",
+        "kind": "department",
+        "module": "budget",
+        "name": "Byudjet №1 agenti",
+        "rank": 1,
+        "description": "Byudjet bo‘limidagi yozuvlar va ko‘rsatkichlarga ixtisoslashgan yetakchi agent.",
+        "trainedOn": [
+          "Bo‘lim yozuvlari",
+          "Status qoidalari",
+          "KPI va analitika",
+          "CRUD ish oqimi"
+        ],
+        "capabilities": [
+          "read",
+          "analyze",
+          "plan",
+          "draft-create",
+          "draft-update",
+          "request-delete"
+        ],
+        "subagents": [
+          {
+            "id": "summary",
+            "name": "Ko‘rsatkichlar tahlilchisi",
+            "task": "Asosiy ko‘rsatkichlarni qisqa hisoblaydi va izohlaydi.",
+            "keywords": [
+              "jami",
+              "qancha",
+              "ko‘rsatkich",
+              "natija"
+            ]
+          },
+          {
+            "id": "risk",
+            "name": "Risk nazoratchisi",
+            "task": "Muddat, qarzdorlik va og‘ish risklarini topadi.",
+            "keywords": [
+              "risk",
+              "qarz",
+              "kechik",
+              "muammo",
+              "og‘ish"
+            ]
+          },
+          {
+            "id": "plan",
+            "name": "Vazifa rejalashtiruvchi",
+            "task": "Katta so‘rovni aniq kichik vazifalarga ajratadi.",
+            "keywords": [
+              "reja",
+              "vazifa",
+              "qanday",
+              "keyingi"
+            ]
+          },
+          {
+            "id": "records",
+            "name": "Yozuvlar mutaxassisi",
+            "task": "Yozuv tafsilotlari, statusi va tavsifini tahlil qiladi.",
+            "keywords": [
+              "yozuv",
+              "status",
+              "tavsif",
+              "description",
+              "kod"
+            ]
+          }
+        ]
+      }
     }
   }
 }
