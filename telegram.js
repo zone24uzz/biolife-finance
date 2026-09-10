@@ -2,6 +2,14 @@ import { createHmac, createHash, timingSafeEqual } from "node:crypto";
 import { can, ensureSecurity, telegramUser } from "./auth.js";
 
 const api = (token, method) => `https://api.telegram.org/bot${token}/${method}`;
+const activeTelegramRequests = new Map();
+
+export function cancelTelegramRequest(chatId) {
+  const controller = activeTelegramRequests.get(String(chatId));
+  if (!controller) return false;
+  controller.abort();
+  return true;
+}
 const publicBaseUrl = () => {
   const explicit =
     process.env.PUBLIC_BASE_URL || process.env.RENDER_EXTERNAL_URL;
@@ -137,6 +145,9 @@ const withTyping = async (chatId, task) => {
   const sent = await tgCall("sendMessage", {
     chat_id: chatId,
     text: frames[0],
+    reply_markup: {
+      inline_keyboard: [[{ text: "⏹ To‘xtatish", callback_data: "stop_ai" }]],
+    },
   }).catch(() => null);
   const messageId = sent?.ok ? sent.result?.message_id : null;
   let frame = 0;
@@ -261,9 +272,20 @@ export async function handleTelegramUpdate(db, update, askAi, performAction) {
       reply_markup: menu(user),
     });
   if (message?.text) {
-    const result = await withTyping(chatId, () =>
-      askAi(db, user, message.text),
-    );
+    const requestKey = String(chatId);
+    activeTelegramRequests.get(requestKey)?.abort();
+    const controller = new AbortController();
+    activeTelegramRequests.set(requestKey, controller);
+    let result;
+    try {
+      result = await withTyping(chatId, () =>
+        askAi(db, user, message.text, controller.signal),
+      );
+    } finally {
+      if (activeTelegramRequests.get(requestKey) === controller)
+        activeTelegramRequests.delete(requestKey);
+    }
+    if (controller.signal.aborted) return;
     const reply = {
       chat_id: chatId,
       text: formatTelegramText(

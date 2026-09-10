@@ -17,8 +17,10 @@ import {
 } from "./auth.js";
 import { createStore } from "./storage.js";
 import {
+  cancelTelegramRequest,
   configureTelegramWebhook,
   handleTelegramUpdate,
+  tgCall,
   verifyInitData,
 } from "./telegram.js";
 import { loadLocalEnv } from "./env.js";
@@ -200,7 +202,7 @@ async function applyProposal(db, user, mode, token, channel = "web") {
   };
 }
 
-async function askAiForTelegram(db, user, prompt) {
+async function askAiForTelegram(db, user, prompt, signal) {
   let result = {};
   const fake = {
     destroyed: false,
@@ -221,6 +223,7 @@ async function askAiForTelegram(db, user, prompt) {
       channel: "telegram",
       role: user.role,
       agentId: db.aiAgents?.accounts?.[user.role]?.id,
+      signal,
     },
     (_res, _status, value) => {
       result = value;
@@ -282,6 +285,15 @@ async function handle(req, res) {
       )
         return send(res, 403, { message: "Webhook secret noto‘g‘ri." });
       const update = await readBody(req, 100000);
+      if (update.callback_query?.data === "stop_ai") {
+        const chatId = update.callback_query.message?.chat?.id;
+        const cancelled = chatId ? cancelTelegramRequest(chatId) : false;
+        await tgCall("answerCallbackQuery", {
+          callback_query_id: update.callback_query.id,
+          text: cancelled ? "So‘rov to‘xtatildi." : "Faol so‘rov topilmadi.",
+        });
+        return send(res, 200, { ok: true, cancelled });
+      }
       let duplicate = false;
       await store.mutate(async (db) => {
         db.telegramUpdates ||= [];
@@ -294,7 +306,8 @@ async function handle(req, res) {
         await handleTelegramUpdate(
           db,
           update,
-          (state, user, prompt) => askAiForTelegram(state, user, prompt),
+          (state, user, prompt, signal) =>
+            askAiForTelegram(state, user, prompt, signal),
           async (state, user, action, token) => {
             const result = await applyProposal(
               state,
