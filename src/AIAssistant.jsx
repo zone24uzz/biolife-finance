@@ -136,7 +136,7 @@ export default function AIAssistant({ dashboard, roleKey }) {
     ]);
     const controller = new AbortController();
     abortRef.current = controller;
-    const timer = setTimeout(() => controller.abort(), 40000);
+    const timer = setTimeout(() => controller.abort(), 65000);
     const update = (event) =>
       setMessages((m) =>
         m.map((item, i) =>

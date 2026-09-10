@@ -196,7 +196,7 @@ export async function chat(
     externalSignal?.addEventListener("abort", abortFromExternal, {
       once: true,
     });
-  const timer = setTimeout(() => controller.abort(), 35000);
+  const timer = setTimeout(() => controller.abort(), 60000);
   const close = () => controller.abort();
   res.on("close", close);
   if (streaming) start();
@@ -255,7 +255,6 @@ export async function chat(
           ],
           generationConfig: {
             maxOutputTokens: 512,
-            thinkingConfig: { thinkingLevel: "minimal" },
           },
         }),
       },
@@ -325,7 +324,7 @@ export async function chat(
     } else send(res, 200, result);
   } catch (error) {
     const message = controller.signal.aborted
-      ? "Gemini 35 soniyada javob bermadi. Qayta urinib ko‘ring."
+      ? "Gemini 60 soniyada javob bermadi. Qayta urinib ko‘ring."
       : "Gemini javobi olinmadi. Birozdan keyin qayta urinib ko‘ring.";
     if (streaming) {
       emit({ error: message });
