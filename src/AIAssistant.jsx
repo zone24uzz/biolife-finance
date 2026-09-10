@@ -8,7 +8,6 @@ import {
   Trash2,
   UserRound,
 } from "lucide-react";
-import "./ai-assistant.css";
 import { apiFetch } from "./api.js";
 
 const livePrompts = (agent, dashboard) => {

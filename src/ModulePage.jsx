@@ -10,7 +10,6 @@ import {
   Trash2,
   X,
 } from "lucide-react";
-import "./module.css";
 import { apiFetch } from "./api.js";
 
 const titleMap = {

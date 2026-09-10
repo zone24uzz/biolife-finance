@@ -37,7 +37,7 @@ import {
   Wallet,
   X,
 } from "lucide-react";
-import "./styles.css";
+import "./tailwind.css";
 import ModulePage from "./ModulePage.jsx";
 import AIAssistant from "./AIAssistant.jsx";
 import { apiFetch, setSession } from "./api.js";

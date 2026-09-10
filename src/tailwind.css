@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+@import "tailwindcss";
+@import "./styles.css" layer(components);
+@import "./module.css" layer(components);
+@import "./ai-assistant.css" layer(components);
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-heading: "Manrope", sans-serif;
+  --color-biolife-ink: #20332d;
+  --color-biolife-muted: #82908a;
+  --color-biolife-green: #55bd92;
+  --color-biolife-deep: #112c25;
+  --color-biolife-line: #e5ebe6;
+  --color-biolife-surface: #f4f7f4;
+}
