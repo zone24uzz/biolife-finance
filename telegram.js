@@ -124,6 +124,21 @@ const dashboardText = (db, user) =>
     ? `📊 BIOLIFE\nDaromad: ${db.summary?.income?.value || "—"}\nXarajat: ${db.summary?.expense?.value || "—"}\nSof foyda: ${db.summary?.netProfit?.value || "—"}`
     : `📊 ${user.name}\nRuxsat etilgan bo‘limlar: ${user.allowed.filter((x) => db.modules[x]).length}`;
 
+const withTyping = async (chatId, task) => {
+  const showTyping = () =>
+    tgCall("sendChatAction", { chat_id: chatId, action: "typing" }).catch(
+      () => {},
+    );
+  await showTyping();
+  const timer = setInterval(showTyping, 4000);
+  timer.unref?.();
+  try {
+    return await task();
+  } finally {
+    clearInterval(timer);
+  }
+};
+
 export async function handleTelegramUpdate(db, update, askAi, performAction) {
   ensureSecurity(db);
   const message = update.message;
@@ -222,7 +237,9 @@ export async function handleTelegramUpdate(db, update, askAi, performAction) {
       reply_markup: menu(user),
     });
   if (message?.text) {
-    const result = await askAi(db, user, message.text);
+    const result = await withTyping(chatId, () =>
+      askAi(db, user, message.text),
+    );
     const reply = {
       chat_id: chatId,
       text: result.answer || result.message || "Javob olinmadi.",
