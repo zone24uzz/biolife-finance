@@ -349,7 +349,9 @@ function TelegramAdmin() {
         setRequests(x);
       })
       .catch((e) => setError(e.message));
-  useEffect(load, []);
+  useEffect(() => {
+    load();
+  }, []);
   const approve = async (id, userId) => {
     const r = await apiFetch(`/admin/telegram-links/${id}/approve`, {
       method: "POST",
