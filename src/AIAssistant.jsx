@@ -38,12 +38,33 @@ const initialMessages = (historyKey) => {
   try {
     const saved = JSON.parse(localStorage.getItem(historyKey));
     if (!Array.isArray(saved)) return fallback;
-    const valid = saved.filter(
-      (item) =>
-        item &&
-        (item.role === "assistant" || item.role === "user") &&
-        typeof item.text === "string",
-    );
+    const valid = saved
+      .filter(
+        (item) =>
+          item &&
+          (item.role === "assistant" || item.role === "user") &&
+          typeof item.text === "string",
+      )
+      .map((item) => {
+        const safe = { role: item.role, text: item.text };
+        for (const key of ["agent", "source", "error", "actionState"])
+          if (typeof item[key] === "string") safe[key] = item[key];
+        if (Array.isArray(item.subagents))
+          safe.subagents = item.subagents.filter(
+            (subagent) => subagent && typeof subagent.name === "string",
+          );
+        const proposal = item.proposal;
+        if (
+          proposal &&
+          typeof proposal.token === "string" &&
+          typeof proposal.action === "string" &&
+          typeof proposal.module === "string" &&
+          typeof proposal.summary === "string" &&
+          Number.isInteger(proposal.section)
+        )
+          safe.proposal = proposal;
+        return safe;
+      });
     return valid.length ? valid : fallback;
   } catch {
     return fallback;

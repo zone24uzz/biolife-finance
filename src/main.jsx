@@ -130,6 +130,37 @@ const titleMap = {
 };
 const fmt = (v) => v ?? "—";
 
+class PageErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { failed: false };
+  }
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  componentDidCatch(error) {
+    console.error("Sahifa render xatosi:", error);
+  }
+  render() {
+    if (!this.state.failed) return this.props.children;
+    return (
+      <div className="api-error">
+        <span>Sahifa ma’lumotlarida xato topildi.</span>
+        <button
+          onClick={() => {
+            Object.keys(localStorage)
+              .filter((key) => key.startsWith("biolife-ai-"))
+              .forEach((key) => localStorage.removeItem(key));
+            window.location.reload();
+          }}
+        >
+          AI tarixini tiklash
+        </button>
+      </div>
+    );
+  }
+}
+
 function Login({ onLogin }) {
   const [user, setUser] = useState("ceo"),
     [pass, setPass] = useState(""),
@@ -1051,7 +1082,9 @@ function App() {
             />
           )}{" "}
           {page === "ai" && dashboard && (
-            <AIAssistant dashboard={dashboard} roleKey={roleKey} />
+            <PageErrorBoundary key={`ai-${roleKey}`}>
+              <AIAssistant dashboard={dashboard} roleKey={roleKey} />
+            </PageErrorBoundary>
           )}{" "}
           {page === "admin" && <TelegramAdmin />}{" "}
           {page !== "dashboard" &&
