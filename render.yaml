@@ -19,7 +19,7 @@ services:
           name: biolife-finance-db
           property: connectionString
       - key: BIOLIFE_BOOTSTRAP_PASSWORD
-        generateValue: true
+        sync: false
       - key: TELEGRAM_WEBHOOK_SECRET
         generateValue: true
       - key: TELEGRAM_BOT_TOKEN

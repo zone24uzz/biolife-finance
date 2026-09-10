@@ -9,7 +9,8 @@ Loyiha `render.yaml` Blueprint orqali bitta Node web service va PostgreSQL baza 
 3. Blueprint yaratishda so‘ralgan maxfiy qiymatlarni kiriting:
    - `TELEGRAM_BOT_TOKEN`
    - `GEMINI_API_KEY`
+   - `BIOLIFE_BOOTSTRAP_PASSWORD` — barcha boshlang‘ich rollar uchun yangi, kuchli parol
 4. Deploy tugagach `/api/v1/health` javobi `{"ok":true,"source":"json-db"}` yoki `source: "postgres"` ekanini tekshiring. Blueprint bazasi to‘g‘ri ulanganida `postgres` chiqadi.
 5. Web service logida `Telegram webhook sozlandi.` yozuvi chiqadi. Bot komandasi va BIOLIFE Web App tugmasi Render domeniga avtomatik o‘tadi.
 
-`BIOLIFE_BOOTSTRAP_PASSWORD` Render tomonidan avtomatik yaratiladi. Uni Render service ichidagi **Environment** bo‘limidan ko‘rib, foydalanuvchilarga xavfsiz tarzda bering. Production’da lokal `biolife-demo` parolidan foydalanmang.
+Production’da lokal `biolife-demo` parolidan foydalanmang. Birinchi ishga tushishda foydalanuvchilar `BIOLIFE_BOOTSTRAP_PASSWORD` bilan yaratiladi; keyin bu qiymatni o‘zgartirish mavjud PostgreSQL foydalanuvchilarining parolini avtomatik almashtirmaydi.
