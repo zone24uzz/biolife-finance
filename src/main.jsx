@@ -18,15 +18,12 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   BarChart3,
-  ChevronRight,
   CircleDollarSign,
   Factory,
   FileText,
   Gauge,
   LayoutDashboard,
-  Menu,
   Package,
-  PanelLeftClose,
   Plus,
   Search,
   ShieldCheck,
@@ -40,6 +37,7 @@ import {
 import "./tailwind.css";
 import ModulePage from "./ModulePage.jsx";
 import AIAssistant from "./AIAssistant.jsx";
+import AppLayout from "./components/AppLayout.jsx";
 import { apiFetch, setSession } from "./api.js";
 
 const roles = {
@@ -274,70 +272,6 @@ function Login({ onLogin }) {
   );
 }
 
-function Sidebar({ role, page, setPage, collapsed, setCollapsed }) {
-  return (
-    <aside className={collapsed ? "sidebar collapsed" : "sidebar"}>
-      <div className="side-top">
-        <div className="brand">
-          <div className="brand-mark">B</div>
-          {!collapsed && (
-            <span>
-              BIOLIFE <b>Finance</b>
-            </span>
-          )}
-        </div>
-        <button
-          className="icon-btn collapse"
-          onClick={() => setCollapsed(!collapsed)}
-        >
-          {collapsed ? <Menu size={19} /> : <PanelLeftClose size={19} />}
-        </button>
-      </div>
-      <nav>
-        {nav
-          .filter((n) => role.allowed.includes(n.id))
-          .map(({ id, label, icon: Icon }) => (
-            <button
-              key={id}
-              className={page === id ? "nav-item active" : "nav-item"}
-              onClick={() => setPage(id)}
-              title={collapsed ? label : ""}
-            >
-              <Icon size={18} />
-              {!collapsed && <span>{label}</span>}
-            </button>
-          ))}
-      </nav>
-      {!collapsed && (
-        <div className="side-bottom">
-          <div className="user-mini">
-            <div className="avatar">{role.initials}</div>
-            <div>
-              <strong>{role.name}</strong>
-              <small>{role.label}</small>
-            </div>
-          </div>
-        </div>
-      )}
-    </aside>
-  );
-}
-function Topbar({ role, onLogout }) {
-  return (
-    <header className="topbar">
-      <div className="crumb">
-        <span>BIOLIFE GROUP</span>
-        <ChevronRight size={14} />
-        <strong>Moliyaviy nazorat</strong>
-      </div>
-      <div className="top-actions">
-        <button className="avatar top-avatar" onClick={onLogout}>
-          {role.initials}
-        </button>
-      </div>
-    </header>
-  );
-}
 function TelegramAdmin() {
   const [requests, setRequests] = useState([]),
     [error, setError] = useState("");
@@ -1031,28 +965,24 @@ function App() {
       />
     );
   return (
-    <div className="app">
-      <Sidebar
+    <>
+      <AppLayout
         role={role}
         page={page}
         setPage={setPage}
         collapsed={collapsed}
         setCollapsed={setCollapsed}
-      />
-      <main className="content">
-        <Topbar
-          role={role}
-          onLogout={async () => {
-            try {
-              await apiFetch("/auth/logout", { method: "POST" });
-            } finally {
-              setSession(null);
-              setAccount(null);
-              setDashboard(null);
-            }
-          }}
-        />
-        <div className="page">
+        navigation={nav}
+        onLogout={async () => {
+          try {
+            await apiFetch("/auth/logout", { method: "POST" });
+          } finally {
+            setSession(null);
+            setAccount(null);
+            setDashboard(null);
+          }
+        }}
+      >
           {error && (
             <div className="api-error">
               <span>{error}</span>
@@ -1102,8 +1032,8 @@ function App() {
                 onCreate={() => setModal(true)}
               />
             )}
-        </div>
-      </main>
+
+      </AppLayout>
       {modal && (
         <CreateModal
           onClose={() => setModal(false)}
@@ -1114,7 +1044,7 @@ function App() {
           }}
         />
       )}
-    </div>
+    </>
   );
 }
 createRoot(document.getElementById("root")).render(
