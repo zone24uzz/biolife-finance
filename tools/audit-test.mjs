@@ -14,6 +14,12 @@ assert.equal(
   "<b>Foyda</b> va <code>100</code>",
 );
 assert.equal(formatTelegramText("<script>"), "&lt;script&gt;");
+const frontendSource = await readFile("src/main.jsx", "utf8");
+const telegramAdminSource = frontendSource.slice(
+  frontendSource.indexOf("function TelegramAdmin()"),
+  frontendSource.indexOf("function Kpi("),
+);
+assert.ok(!/\baccount\b/.test(telegramAdminSource), "TelegramAdmin must not reference App-local account state");
 const sessionDb={security:{users:[],sessions:[],telegramAccounts:[],linkRequests:[
   {id:"old",telegramId:"777001",status:"approved",createdAt:"2026-01-01T00:00:00.000Z"},
   {id:"new",telegramId:"777001",status:"pending",createdAt:"2026-01-02T00:00:00.000Z"},
@@ -310,6 +316,7 @@ try {
       telegramLink: "PASS",
       telegramIdempotency: "PASS",
       staticMiniApp: "PASS",
+      telegramAdminRenderScope: "PASS",
       createUpdateDelete: "PASS",
       persistence: "PASS",
       duplicate: "PASS",
