@@ -1,5 +1,5 @@
 import { createHmac, createHash, timingSafeEqual } from "node:crypto";
-import { can, ensureSecurity, telegramUser } from "./auth.js";
+import { can, ensureSecurity, logoutTelegramSessions, telegramUser } from "./auth.js";
 
 const api = (token, method) => `https://api.telegram.org/bot${token}/${method}`;
 const activeTelegramRequests = new Map();
@@ -183,12 +183,8 @@ export async function handleTelegramUpdate(db, update, askAi, performAction) {
   if (!from || !chatId) return;
   let user = telegramUser(db, from.id);
   if (!user) {
-    if (
-      !db.security.linkRequests.some(
-        (x) =>
-          String(x.telegramId) === String(from.id) && x.status === "pending",
-      )
-    )
+    let request=db.security.linkRequests.find(x=>String(x.telegramId)===String(from.id));
+    if (!request)
       db.security.linkRequests.push({
         id: createHash("sha256")
           .update(`${from.id}:${Date.now()}`)
@@ -200,6 +196,17 @@ export async function handleTelegramUpdate(db, update, askAi, performAction) {
         status: "pending",
         createdAt: new Date().toISOString(),
       });
+    else if(request.status!=="pending"){
+      request.status="pending";
+      request.username=from.username||"";
+      request.firstName=from.first_name||"";
+      request.createdAt=new Date().toISOString();
+      delete request.userId;
+      delete request.approvedBy;
+      delete request.approvedAt;
+      delete request.revokedBy;
+      delete request.revokedAt;
+    }
     await tgCall("sendMessage", {
       chat_id: chatId,
       text: "Akkauntingiz administrator tasdig‘ini kutmoqda.",
@@ -211,6 +218,13 @@ export async function handleTelegramUpdate(db, update, askAi, performAction) {
       (x) => String(x.telegramId) === String(from.id) && x.status === "active",
     );
     if (link) link.status = "revoked";
+    logoutTelegramSessions(db,user.id,from.id);
+    const request=db.security.linkRequests.find(x=>String(x.telegramId)===String(from.id));
+    if(request){
+      request.status="revoked";
+      request.revokedAt=new Date().toISOString();
+      request.revokedBy=user.id;
+    }
     await tgCall("sendMessage", {
       chat_id: chatId,
       text: "Telegram akkaunti uzildi. Qayta kirish uchun /start yuboring va admin tasdig‘ini kuting.",

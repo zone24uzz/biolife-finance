@@ -1,5 +1,6 @@
 import { createHash, randomUUID } from "node:crypto";
-import { ROLE_MODULES } from "./auth.js";
+import { canAccess, readableAIResources } from "./access-control.js";
+import { agentPresentation, auditAIRequest, authorizeAIRequest, buildAIContext, sanitizeAIPrompt, scopedAITools, systemPromptFor } from "./ai-security.js";
 
 const cache = new Map();
 export function consumeAction(db, token, user) {
@@ -27,7 +28,7 @@ function registerAction(db, agent, args, user) {
     ? args.action
     : null;
   const module = agent.module || args?.module;
-  if (!action || !module) return null;
+  if (!action || !module || !canAccess(user, `${module}.records.write`)) return null;
   const proposal = {
     token: randomUUID(),
     action,
@@ -48,26 +49,22 @@ function registerAction(db, agent, args, user) {
   });
   return proposal;
 }
-export function visibleAgents(db, role) {
-  const personal = db.aiAgents?.accounts?.[role];
-  const allowed = ROLE_MODULES[role] || [];
+export function visibleAgents(db, user) {
+  const personal = db.aiAgents?.accounts?.[user.role];
+  const allowed = readableAIResources(user);
+  const presentation = agentPresentation(user);
   return {
-    personal,
+    personal: personal ? {...personal, ...presentation} : null,
+    scope: presentation,
     departments: Object.values(db.aiAgents?.departments || {}).filter(
-      (x) => !x.module || allowed.includes(x.module),
+      (x) => x.module && allowed.includes(x.module),
     ),
   };
 }
-function resolveAgent(db, input) {
-  const all = [
-    ...Object.values(db.aiAgents?.accounts || {}),
-    ...Object.values(db.aiAgents?.departments || {}),
-  ];
-  return (
-    all.find((a) => a.id === input.agentId) ||
-    db.aiAgents?.accounts?.[input.role] ||
-    db.aiAgents?.accounts?.ceo
-  );
+function resolveAgent(db, input, user) {
+  const catalog = visibleAgents(db, user);
+  const all = [catalog.personal, ...catalog.departments].filter(Boolean);
+  return all.find((a) => a.id === input.agentId) || catalog.personal || catalog.departments[0];
 }
 function routeSubagents(agent, prompt) {
   const matched = (agent?.subagents || [])
@@ -77,35 +74,6 @@ function routeSubagents(agent, prompt) {
     .slice(0, 2);
   return matched.length ? matched : (agent?.subagents || []).slice(0, 1);
 }
-export function selectContext(db, prompt) {
-  const routes = {
-    sales: /sotuv|mijoz|diler|debitor|qarz/i,
-    purchases: /xarid|kreditor|ta.minot|qarz/i,
-    production: /ishlab|liniya|suv|tannarx|uskuna/i,
-    warehouse: /ombor|qoldiq|material|inventar/i,
-    budget: /byudjet|reja|cash|gap|pul|to.lov/i,
-    cash: /bank|kassa|pul|cash/i,
-    finance: /balans|jurnal|hisob|foyda|daromad|xarajat/i,
-  };
-  const summaryOnly =
-    /foyda|daromad|xarajat/i.test(prompt) &&
-    /qancha|qisqa|summa/i.test(prompt) &&
-    !/risk|sabab|tahlil/i.test(prompt);
-  const modules = summaryOnly
-    ? {}
-    : Object.fromEntries(
-        Object.entries(routes)
-          .filter(([, pattern]) => pattern.test(prompt))
-          .map(([key]) => [key, db.modules[key]]),
-      );
-  return {
-    period: db.meta.period,
-    summary: db.summary,
-    productionLines: db.productionLines,
-    modules,
-  };
-}
-
 export async function chat(
   req,
   res,
@@ -113,25 +81,25 @@ export async function chat(
   input,
   send,
   persist = async () => {},
-  user = { id: "anonymous", role: input.role || "ceo" },
+  user = { id: "anonymous", role: "restricted" },
 ) {
   const prompt = input.prompt;
   if (typeof prompt !== "string" || !prompt.trim() || prompt.length > 4000)
     return send(res, 422, { message: "Savol 1–4000 belgidan iborat bo‘lsin." });
+  const streaming = input.stream === true;
+  const decision = authorizeAIRequest(user, prompt);
+  auditAIRequest(db, user, prompt, decision);
+  await persist(db);
+  if (!decision.allowed) {
+    return send(res, 403, { message: decision.message, code: "AI_SCOPE_DENIED" });
+  }
   if (!process.env.GEMINI_API_KEY)
     return send(res, 503, { message: "Gemini sozlanmagan." });
-  const streaming = input.stream === true;
-  const agent = resolveAgent(db, input);
+  const agent = resolveAgent(db, input, user);
   if (!agent)
     return send(res, 503, { message: "AI agent katalogi sozlanmagan." });
-  if (agent.module && !(ROLE_MODULES[user.role] || []).includes(agent.module))
-    return send(res, 403, { message: "Bu agent uchun ruxsat yo‘q." });
   const subagents = routeSubagents(agent, prompt);
-  const context = selectContext(db, `${agent.module || ""} ${prompt}`);
-  if (agent.module)
-    context.modules = Object.fromEntries(
-      Object.entries(context.modules).filter(([key]) => key === agent.module),
-    );
+  const context = buildAIContext(db, user);
   const model = process.env.GEMINI_MODEL || "gemini-3.5-flash-lite";
   const history = Array.isArray(input.history)
     ? input.history
@@ -214,7 +182,7 @@ export async function chat(
           systemInstruction: {
             parts: [
               {
-                text: `Siz ${agent.name}: ${agent.description} Faol mutaxassislar: ${subagents.map((s) => `${s.name} — ${s.task}`).join("; ")}. O‘zbekcha, 120 so‘zgacha aniq javob bering. Faqat kontekstdagi dalillardan foydalaning. Foydalanuvchi yozuv qo‘shish, tahrirlash yoki o‘chirishni aniq so‘rasa propose_record_action funksiyasini chaqiring. Qator 6 maydon: kod, nomi, sana/kategoriya, qiymat, status, tavsif. Yangi yozuv statusi Qoralama bo‘lsin. Bo‘lim agenti faqat ${agent.module || "so‘rovda aniq ko‘rsatilgan bo‘lim"} doirasida amal qiladi.`,
+                text: systemPromptFor(user, agent, subagents),
               },
             ],
           },
@@ -227,32 +195,7 @@ export async function chat(
               ],
             },
           ],
-          tools: [
-            {
-              functionDeclarations: [
-                {
-                  name: "propose_record_action",
-                  description:
-                    "Tasdiqlash uchun yozuv CRUD amalini tayyorlaydi",
-                  parameters: {
-                    type: "OBJECT",
-                    properties: {
-                      action: {
-                        type: "STRING",
-                        enum: ["create", "update", "delete"],
-                      },
-                      module: { type: "STRING" },
-                      section: { type: "INTEGER" },
-                      code: { type: "STRING" },
-                      row: { type: "ARRAY", items: { type: "STRING" } },
-                      summary: { type: "STRING" },
-                    },
-                    required: ["action", "module", "section", "summary"],
-                  },
-                },
-              ],
-            },
-          ],
+          tools: scopedAITools(user),
           generationConfig: {
             maxOutputTokens: 512,
           },
@@ -312,7 +255,7 @@ export async function chat(
       userId: user.id,
       channel: input.channel || "web",
       agentId: agent.id,
-      prompt: prompt.trim(),
+      prompt: sanitizeAIPrompt(prompt.trim()),
       response: answer,
       proposalToken: proposal?.token || null,
       at: new Date().toISOString(),

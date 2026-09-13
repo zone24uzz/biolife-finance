@@ -286,6 +286,30 @@ function TelegramAdmin() {
   useEffect(() => {
     load();
   }, []);
+  useEffect(() => {
+    if (!account) return;
+    let running = false;
+    const verifySession = async () => {
+      if (running) return;
+      running = true;
+      try {
+        await apiFetch("/me");
+      } catch {
+        // Tarmoq xatosi sessiyani o‘chirmaydi; faqat server 401 qaytarsa apiFetch logout qiladi.
+      } finally {
+        running = false;
+      }
+    };
+    const timer = setInterval(verifySession, 1500);
+    const onVisible = () => {
+      if (document.visibilityState === "visible") verifySession();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      clearInterval(timer);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [account?.id]);
   const approve = async (id, userId) => {
     const r = await apiFetch(`/admin/telegram-links/${id}/approve`, {
       method: "POST",

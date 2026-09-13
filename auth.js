@@ -1,4 +1,5 @@
 import { createHash, randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
+import { accessProfile, publicAccessFields } from './access-control.js';
 
 export const ROLE_MODULES = {
   ceo: ['dashboard','production','warehouse','sales','purchases','cash','finance','budget','ai','admin'],
@@ -29,10 +30,28 @@ export function ensureSecurity(db) {
   db.conversations ||= [];
   db.aiProposals ||= [];
   db.outbox ||= [];
+  db.security.linkRequests = [
+    ...db.security.linkRequests.reduce((byTelegram, request) => {
+      const key=String(request.telegramId);
+      const current=byTelegram.get(key);
+      if(!current || new Date(request.createdAt||0)>=new Date(current.createdAt||0))
+        byTelegram.set(key,request);
+      return byTelegram;
+    },new Map()).values(),
+  ];
   if (!db.security.users.length) {
     const password = process.env.BIOLIFE_BOOTSTRAP_PASSWORD || 'biolife-demo';
     const labels = {ceo:'CEO / Direktor',accountant:'Buxgalter',warehouse_manager:'Ombor boshlig‘i',production_manager:'Ishlab chiqarish boshlig‘i',sales_manager:'Sotuv menejeri',purchase_manager:'Ta’minot menejeri',auditor:'Auditor'};
     db.security.users = Object.keys(ROLE_MODULES).map(role => ({id:role,login:role,name:labels[role],role,status:'active',passwordHash:hashPassword(password),createdAt:new Date().toISOString()}));
+  }
+  if (db.security.credentialVersion !== 2) {
+    for (const user of db.security.users) {
+      const envKey = `BIOLIFE_PASSWORD_${user.role.toUpperCase()}`;
+      user.passwordHash = hashPassword(
+        process.env[envKey] || `${user.role}-biolife-2026`,
+      );
+    }
+    db.security.credentialVersion = 2;
   }
   const now = Date.now();
   db.security.sessions = db.security.sessions.filter(x => new Date(x.expiresAt).getTime() > now);
@@ -45,9 +64,9 @@ export function login(db, loginName, password) {
   return issueSession(db,user);
 }
 
-export function issueSession(db,user) {
+export function issueSession(db,user,context={}) {
   const token = randomBytes(32).toString('base64url');
-  db.security.sessions.push({id:randomBytes(12).toString('hex'),tokenHash:tokenHash(token),userId:user.id,createdAt:new Date().toISOString(),expiresAt:new Date(Date.now()+12*60*60*1000).toISOString()});
+  db.security.sessions.push({id:randomBytes(12).toString('hex'),name:'Biolife-Finance',tokenHash:tokenHash(token),userId:user.id,source:context.source||'password',telegramId:context.telegramId?String(context.telegramId):undefined,createdAt:new Date().toISOString(),expiresAt:new Date(Date.now()+12*60*60*1000).toISOString()});
   return {token,user:publicUser(user)};
 }
 
@@ -62,8 +81,21 @@ export function authenticate(db, req) {
 }
 
 export function logout(db, sessionId) { db.security.sessions = db.security.sessions.filter(x => x.id !== sessionId); }
-export function publicUser(user) { return {id:user.id,login:user.login,name:user.name,role:user.role,allowed:ROLE_MODULES[user.role] || []}; }
-export function can(user, module) { return Boolean(user?.allowed?.includes(module)); }
+export function logoutTelegramSessions(db, userId, telegramId) {
+  const id=String(telegramId);
+  db.security.sessions=db.security.sessions.filter(session =>
+    session.userId !== userId ||
+    (session.source === 'password' && String(session.telegramId||'') !== id)
+  );
+}
+export function publicUser(user) { return {id:user.id,login:user.login,name:user.name,role:user.role,allowed:ROLE_MODULES[user.role] || [],...publicAccessFields(user)}; }
+export function can(user, module) {
+  if (!user || !module) return false;
+  const permissions = accessProfile(user).permissions;
+  if (module === 'dashboard' || module === 'ai') return permissions.length > 0;
+  if (module === 'admin') return permissions.includes('admin.access');
+  return permissions.some(permission => permission.startsWith(`${module}.`));
+}
 export function telegramUser(db, telegramId) {
   ensureSecurity(db);
   const link = db.security.telegramAccounts.find(x => String(x.telegramId) === String(telegramId) && x.status === 'active');

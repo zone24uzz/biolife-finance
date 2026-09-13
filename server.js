@@ -270,7 +270,7 @@ async function handle(req, res) {
         const linked = telegramUser(db, tg.id);
         if (linked) {
           const full = db.security.users.find((x) => x.id === linked.id);
-          result = issueSession(db, full);
+          result = issueSession(db, full, { source: "telegram", telegramId: tg.id });
         }
       });
       return result
@@ -478,10 +478,9 @@ async function handle(req, res) {
       });
     }
     if (req.method === "GET" && url.pathname === "/api/v1/ai/agents")
-      return send(res, 200, visibleAgents(db, user.role));
+      return send(res, 200, visibleAgents(db, user));
     if (req.method === "POST" && url.pathname === "/api/v1/ai/chat") {
       const input = await readBody(req);
-      input.role = user.role;
       return chat(
         req,
         res,

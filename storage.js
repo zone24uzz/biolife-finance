@@ -6,7 +6,7 @@ import process from 'node:process';
 export function createStore(root) {
   const dbPath = process.env.BIOLIFE_DB_PATH || path.join(root, 'db', 'data.json');
   const runtimePath = process.env.BIOLIFE_RUNTIME_PATH || dbPath.replace(/\.json$/i, '.runtime.json');
-  const runtimeKeys=['security','conversations','aiProposals','outbox','telegramUpdates'];
+  const runtimeKeys=['security','conversations','aiProposals','aiAccessLogs','outbox','telegramUpdates'];
   let pool;
   let queue = Promise.resolve();
 

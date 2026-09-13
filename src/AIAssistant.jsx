@@ -10,22 +10,17 @@ import {
 } from "lucide-react";
 import { apiFetch } from "./api.js";
 
-const livePrompts = (agent, dashboard) => {
-  const hour = new Date().getHours(),
-    period = dashboard?.meta?.period || "joriy davr",
-    scope = agent?.module ? agent.name : "barcha bo‘limlar";
-  const moment =
-    hour < 12
-      ? "Bugungi ustuvor vazifalarni rejalashtir"
-      : hour < 18
-        ? "Hozirgi jarayon va risklarni tekshir"
-        : "Bugungi natija va og‘ishlarni yakunla";
-  return [
-    moment,
-    `${scope} bo‘yicha ${period} KPI xulosasini ber`,
-    `${scope}dagi xavfli statuslarni top`,
-    `${scope} uchun keyingi 3 ta kichik vazifani tuz`,
-  ];
+const livePrompts = (department) => {
+  const prompts = {
+    executive: ["Kompaniya bo‘yicha asosiy risklarni top", "Bugungi KPI’larni tahlil qil", "Bo‘limlarni solishtir", "Umumiy moliyaviy holatni ko‘rsat"],
+    warehouse: ["Ombordagi risklarni tekshir", "Kam qolgan mahsulotlarni top", "Bugungi kirim-chiqimni tahlil qil", "Yetkazib berishdagi kechikishlarni ko‘rsat"],
+    production: ["Ishlab chiqarish samaradorligini tekshir", "Liniyalardagi muammolarni top", "Reja va faktni solishtir", "Ishlab chiqarish risklarini aniqlash"],
+    finance: ["Bugungi cash flowni tahlil qil", "Xarajatlar oshgan joylarni top", "Margin holatini tekshir", "Moliyaviy risklarni aniqlash"],
+    sales: ["Bugungi sotuvlarni tahlil qil", "Debitor risklarini top", "Mijozlar holatini tekshir", "Savdo KPI’larini tahlil qil"],
+    purchases: ["Xarid risklarini tekshir", "Kechikayotgan ta’minotni top", "Kreditorlarni tahlil qil", "Ta’minot KPI’larini tekshir"],
+    audit: ["So‘nggi audit hodisalarini tekshir", "Nomaqbul urinishlarni top", "Nazorat risklarini tahlil qil", "Audit izini qisqa xulosa qil"],
+  };
+  return prompts[department] || ["Ruxsat etilgan ma’lumotlarni tahlil qil"];
 };
 
 const initialMessages = (historyKey) => {
@@ -86,7 +81,9 @@ export default function AIAssistant({ dashboard, roleKey }) {
       ...(Array.isArray(catalog?.departments) ? catalog.departments : []),
     ].filter(Boolean),
     agent = agents.find((x) => x.id === agentId) || agents[0],
-    prompts = livePrompts(agent, dashboard);
+    prompts = livePrompts(catalog?.scope?.department),
+    assistantTitle = catalog?.scope?.name || agent?.name || "AI Assistant",
+    assistantDescription = catalog?.scope?.description || agent?.description || "Ruxsat etilgan ma’lumotlarni tahlil qiladi";
   useEffect(() => {
     try {
       localStorage.setItem(historyKey, JSON.stringify(messages.slice(-80)));
@@ -230,9 +227,9 @@ export default function AIAssistant({ dashboard, roleKey }) {
         <div>
           <span className="eyebrow">AI AGENTLAR MARKAZI</span>
           <h1>
-            Bo‘lim agentlari <Sparkles size={25} />
+            {assistantTitle} <Sparkles size={25} />
           </h1>
-          <p>Har bir so‘rov kichik mutaxassis vazifalariga yo‘naltiriladi.</p>
+          <p>{assistantDescription}</p>
         </div>
         <button
           className="outline"
