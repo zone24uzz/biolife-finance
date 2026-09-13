@@ -13,7 +13,7 @@ ENV NODE_ENV=production BIOLIFE_HOST=0.0.0.0 BIOLIFE_PORT=8787
 COPY package*.json ./
 RUN npm ci --omit=dev
 COPY --from=build /app/dist ./dist
-COPY server.js ai.js auth.js storage.js telegram.js env.js ./
+COPY server.js ai.js ai-security.js access-control.js auth.js storage.js telegram.js env.js ./
 COPY db ./db
 EXPOSE 8787
 CMD ["node","server.js"]
